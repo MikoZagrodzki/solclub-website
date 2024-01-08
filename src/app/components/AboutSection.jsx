@@ -9,7 +9,7 @@ const TAB_DATA = [
     id: "contract",
     content: (
       <ul className="list-disc pl-2">
-        <li>22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3</li>
+        <li className="break-all">22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3</li>
       </ul>
     ),
   },
