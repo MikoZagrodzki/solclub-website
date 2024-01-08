@@ -5,15 +5,6 @@ import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
-    title: "contract",
-    id: "contract",
-    content: (
-      <ul className="list-disc pl-2">
-        <li className="break-all">22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3</li>
-      </ul>
-    ),
-  },
-  {
     title: "tokenomics",
     id: "tokenomics",
     content: (
@@ -31,6 +22,15 @@ const TAB_DATA = [
     ),
   },
   {
+    title: "contract",
+    id: "contract",
+    content: (
+      <ul className="list-disc pl-2">
+        <li className="break-all">22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3</li>
+      </ul>
+    ),
+  },
+  {
     title: "tab3",
     id: "tab3",
     content: (
@@ -43,7 +43,7 @@ const TAB_DATA = [
 ];
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("contract");
+  const [tab, setTab] = useState("tokenomics");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
@@ -63,18 +63,18 @@ const AboutSection = () => {
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
-              selectTab={() => handleTabChange("contract")}
-              active={tab === "contract"}
-            >
-              {" "}
-              Contract{" "}
-            </TabButton>
-            <TabButton
               selectTab={() => handleTabChange("tokenomics")}
               active={tab === "tokenomics"}
             >
               {" "}
               Tokenomics{" "}
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("contract")}
+              active={tab === "contract"}
+            >
+              {" "}
+              Contract{" "}
             </TabButton>
             <TabButton
               selectTab={() => handleTabChange("tab3")}
