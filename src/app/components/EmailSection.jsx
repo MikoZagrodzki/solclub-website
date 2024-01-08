@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import DexIcon from '../../../public/dexscreener-icon.svg'
+import DexIcon from '../../../public/dexscreener-icon.svg';
 import TelegramIcon from "../../../public/telegram-icon.svg";
+import XIcon from "../../../public/x-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -54,11 +55,14 @@ const EmailSection = () => {
           Feel free to reach out to us if you have any questions, suggestions, or just want to chat about the exciting journey we&apos;re on. Whether you&apos;re a passionate supporter, a potential collaborator, or someone curious about the intersection of cryptocurrency and ADHD advocacy, we&apos;re here for it!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="DexScreener.com">
+          <Link href="https://DexScreener.com" target="_blank">
             <Image src={DexIcon} alt="Github Icon" />
           </Link>
-          <Link href="Telegram.org">
+          <Link href="https://Telegram.org" target="_blank">
             <Image src={TelegramIcon} alt="Linkedin Icon" />
+          </Link>          
+          <Link href="https://twitter.com" target="_blank">
+            <Image src={XIcon} alt="Linkedin Icon" />
           </Link>
         </div>
       </div>
