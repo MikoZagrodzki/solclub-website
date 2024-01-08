@@ -60,7 +60,7 @@ const HeroSection = () => {
               className='px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white'
               onClick={copyToClipboard}
             >
-              Copy Contract
+              Contract
             </button>
             {isCopied && (
               <div className="fixed inset-0 flex items-center justify-center">
@@ -96,13 +96,20 @@ const HeroSection = () => {
           className='col-span-4 place-self-center mt-4 lg:mt-0'
         >
           <div className='rounded-full bg-[#000000] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative'>
-            <Image
+          <Image
               src='/images/hero-image.png'
               alt='hero image'
               className='rounded-3xl absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
               width={300}
               height={300}
             />
+            {/* <Image
+              src='/images/adhdtransparent.png'
+              alt='hero image'
+              className='rounded-3xl absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+              width={300}
+              height={300}
+            /> */}
           </div>
         </motion.div>
       </div>
