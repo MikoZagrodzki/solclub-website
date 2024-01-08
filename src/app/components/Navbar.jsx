@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import Image from "next/image";
 
 const navLinks = [
   {
@@ -11,8 +12,8 @@ const navLinks = [
     path: "#about",
   },
   {
-    title: "Projects",
-    path: "#projects",
+    title: "Chart",
+    path: "#chart",
   },
   {
     title: "Contact",
@@ -28,9 +29,15 @@ const Navbar = () => {
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-2xl md:text-5xl text-white font-semibold"
+          className="text-2xl md:text-5xl text-white font-semibold flex items-center gap-1"
         >
-          LOGO
+          <Image
+              src="/images/hero-image.png"
+              alt="hero image"
+              width={50}
+              height={50}
+              className=""
+              /> ADHD
         </Link>
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (

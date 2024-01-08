@@ -5,43 +5,43 @@ import TabButton from "./TabButton";
 
 const TAB_DATA = [
   {
-    title: "Skills",
-    id: "skills",
+    title: "tab1",
+    id: "tab1",
     content: (
       <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
+        <li>ELEMENT</li>
+        <li>ELEMENT</li>
+        <li>ELEMENT</li>
+        <li>ELEMENT</li>
+        <li>ELEMENT</li>
+        <li>ELEMENT</li>
       </ul>
     ),
   },
   {
-    title: "Education",
-    id: "education",
+    title: "tab2",
+    id: "tab2",
     content: (
       <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+        <li>ELEMENT</li>
+        <li>ELEMENT</li>
       </ul>
     ),
   },
   {
-    title: "Certifications",
-    id: "certifications",
+    title: "tab3",
+    id: "tab3",
     content: (
       <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+        <li>ELEMENT</li>
+        <li>ELEMENT</li>
       </ul>
     ),
   },
 ];
 
 const AboutSection = () => {
-  const [tab, setTab] = useState("skills");
+  const [tab, setTab] = useState("tab1");
   const [isPending, startTransition] = useTransition();
 
   const handleTabChange = (id) => {
@@ -57,34 +57,29 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+          Welcome to the heart of our ADHD memecoin movement! We're not just a cryptocurrency; we're a community redefining the conversation around ADHD with humor and purpose. Our mission is to break stigmas, empower voices, and build a space where every meme contributes to a more inclusive and supportive future. Join us in rewriting the narrative around ADHD – this isn't just about coins; it's about a revolution fueled by laughter and unity. Welcome to the forefront of change!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
-              selectTab={() => handleTabChange("skills")}
-              active={tab === "skills"}
+              selectTab={() => handleTabChange("tab1")}
+              active={tab === "tab1"}
             >
               {" "}
-              Skills{" "}
+              Tab 1{" "}
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("education")}
-              active={tab === "education"}
+              selectTab={() => handleTabChange("tab2")}
+              active={tab === "tab2"}
             >
               {" "}
-              Education{" "}
+              Tab 2{" "}
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
+              selectTab={() => handleTabChange("tab3")}
+              active={tab === "tab3"}
             >
               {" "}
-              Certifications{" "}
+              Tab 3{" "}
             </TabButton>
           </div>
           <div className="mt-8">

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import GithubIcon from "../../../public/github-icon.svg";
-import LinkedinIcon from "../../../public/linkedin-icon.svg";
+import DexIcon from '../../../public/dexscreener-icon.svg'
+import TelegramIcon from "../../../public/telegram-icon.svg";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -51,16 +51,14 @@ const EmailSection = () => {
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
+          Feel free to reach out to us if you have any questions, suggestions, or just want to chat about the exciting journey we're on. Whether you're a passionate supporter, a potential collaborator, or someone curious about the intersection of cryptocurrency and ADHD advocacy, we're here for it!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
-            <Image src={GithubIcon} alt="Github Icon" />
+          <Link href="DexScreener.com">
+            <Image src={DexIcon} alt="Github Icon" />
           </Link>
-          <Link href="linkedin.com">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
+          <Link href="Telegram.org">
+            <Image src={TelegramIcon} alt="Linkedin Icon" />
           </Link>
         </div>
       </div>
@@ -100,7 +98,7 @@ const EmailSection = () => {
                 id="subject"
                 required
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
+                placeholder="Your query"
               />
             </div>
             <div className="mb-6">
