@@ -37,7 +37,7 @@ const Navbar = () => {
               alt="hero image"
               width={50}
               height={50}
-              className=""
+              className="rounded-xl"
               /> ADHD
         </Link>
         <div className="mobile-menu block md:hidden">

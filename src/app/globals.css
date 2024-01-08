@@ -25,3 +25,19 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+/* public/fonts/pixel-font.ttf */
+@font-face {
+  font-family: 'PixelFont';
+  src: url('/fonts/pixel-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* body {
+  font-family: 'PixelFont', sans-serif;
+} */
+
+#pixel_font {
+  font-family: 'PixelFont', sans-serif;
+}

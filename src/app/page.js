@@ -14,8 +14,8 @@ export default function Home() {
         <HeroSection />
         <AchievementsSection />
         <AboutSection />
-        {/* <ChartComponent /> */}
-        {/* <EmailSection /> */}
+        {/* <ChartComponent />
+        <EmailSection /> */}
       </div>
       <Footer />
     </main>
