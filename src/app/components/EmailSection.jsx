@@ -51,7 +51,7 @@ const EmailSection = () => {
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          Feel free to reach out to us if you have any questions, suggestions, or just want to chat about the exciting journey we're on. Whether you're a passionate supporter, a potential collaborator, or someone curious about the intersection of cryptocurrency and ADHD advocacy, we're here for it!
+          Feel free to reach out to us if you have any questions, suggestions, or just want to chat about the exciting journey we&apos;re on. Whether you&apos;re a passionate supporter, a potential collaborator, or someone curious about the intersection of cryptocurrency and ADHD advocacy, we&apos;re here for it!
         </p>
         <div className="socials flex flex-row gap-2">
           <Link href="DexScreener.com">

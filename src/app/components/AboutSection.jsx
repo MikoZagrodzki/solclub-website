@@ -57,7 +57,7 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-          Welcome to the heart of our ADHD memecoin movement! We're not just a cryptocurrency; we're a community redefining the conversation around ADHD with humor and purpose. Our mission is to break stigmas, empower voices, and build a space where every meme contributes to a more inclusive and supportive future. Join us in rewriting the narrative around ADHD – this isn't just about coins; it's about a revolution fueled by laughter and unity. Welcome to the forefront of change!
+          Welcome to the heart of our ADHD memecoin movement! Were not just a cryptocurrency; we&apos;re a community redefining the conversation around ADHD with humor and purpose. Our mission is to break stigmas, empower voices, and build a space where every meme contributes to a more inclusive and supportive future. Join us in rewriting the narrative around ADHD - this isn&apos;t just about coins; it&apos;s about a revolution fueled by laughter and unity. Welcome to the forefront of change!
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
