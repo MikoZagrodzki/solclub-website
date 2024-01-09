@@ -89,7 +89,7 @@ const AboutSection = () => {
   return (
     <section className='relative z-10' id='about'>
       <div className='video-background top-0 left-0 w-full h-full'>
-        <video autoPlay loop playsInline className='w-full h-full object-cover'>
+        <video autoPlay loop muted playsInline className='w-full h-full object-cover'>
           <source src='/videos/ADHD1-video.mp4' type='video/mp4' />
         </video>
       </div>
