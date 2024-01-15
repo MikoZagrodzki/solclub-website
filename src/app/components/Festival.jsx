@@ -46,19 +46,19 @@ function Festival() {
 
   const iconsPositions = isSmallScreen
     ? [
-      { x: 293, y: 2350, modalTitle: 'DEX', modalText: 'We are working on our own dex', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
-      { x: 1803, y: 2350, modalTitle: 'Prepaid Card', modalText: 'We are working on it', iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
-      { x: 234, y: 2020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open' },
-      { x: 1911, y: 2020, modalTitle: 'Youtube Channel', modalText: 'Come with us to Chill to our music', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
-      { x: 1954, y: 1560, modalTitle: 'Telegram Mixer', modalText: 'Mix money - be anonymous', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
+      { x: 293, y: 2350, modalTitle: 'DEX', modalText: 'We are working on our own dex', iconSrc: './pinIcons/dex-pin.png', buttonText: 'Coming soon' },
+      { x: 1803, y: 2350, modalTitle: 'Prepaid Card', modalText: 'We are working on it', iconSrc: './pinIcons/card-icon.png', buttonText: 'Coming soon' },
+      { x: 234, y: 2020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: './pinIcons/paper-icon.png', buttonText: 'Open' },
+      { x: 1911, y: 2020, modalTitle: 'Youtube Channel', modalText: 'Come with us to Chill to our music', iconSrc: './pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
+      { x: 1954, y: 1560, modalTitle: 'Telegram Mixer', modalText: 'Mix money - be anonymous', iconSrc: './pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
 
       ]
     : [
-        { x: 2527, y: 1013,  modalTitle: 'DEX', modalText: 'We are working on our own dex', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
-        { x: 1278, y: 1109, modalTitle: 'Prepaid Card', modalText: 'We are working on it', iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
-        { x: 2884, y: 1020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open' },
-        { x: 939, y: 944, modalTitle: 'Youtube Channel', modalText: 'Come with us to Chill to our music', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
-        { x: 2205, y: 1430, modalTitle: 'Telegram Mixer', modalText: 'Mix money - be anonymous', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
+        { x: 2527, y: 1013,  modalTitle: 'DEX', modalText: 'We are working on our own dex', iconSrc: './pinIcons/dex-pin.png', buttonText: 'Coming soon' },
+        { x: 1278, y: 1109, modalTitle: 'Prepaid Card', modalText: 'We are working on it', iconSrc: './pinIcons/card-icon.png', buttonText: 'Coming soon' },
+        { x: 2884, y: 1020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: './pinIcons/paper-icon.png', buttonText: 'Open' },
+        { x: 939, y: 944, modalTitle: 'Youtube Channel', modalText: 'Come with us to Chill to our music', iconSrc: './pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
+        { x: 2205, y: 1430, modalTitle: 'Telegram Mixer', modalText: 'Mix money - be anonymous', iconSrc: './pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
 
       ];
 
@@ -119,7 +119,7 @@ function Festival() {
       )}
       {iconsPositions.map((pos, index) => (
         <div key={index} style={iconStyle(pos.x, pos.y)} className={`cursor-pointer`} onClick={() => openModal(pos)}>
-          <Image src={pos.iconSrc} alt='Linkedin Icon' className={`animate-bounce`} width={60} height={60} />
+          <Image src={pos.iconSrc} alt={pos.title} className={`animate-bounce`} width={60} height={60} />
         </div>
       ))}
 
