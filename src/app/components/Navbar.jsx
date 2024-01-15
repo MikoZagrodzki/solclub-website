@@ -41,7 +41,7 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
-    <nav className='fixed mx-auto top-0 left-0 right-0 bg-[#121212] bg-opacity-0 z-20'>
+    <nav className={`fixed mx-auto top-0 left-0 right-0  z-20 ${navbarOpen&&' border-b-2 bg-black bg-opacity-30'}`}>
       <div className=' flex flex-row-reverse container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2'>
         <div className='w-1/3 flex justify-end'>
           <button className=' bg-white rounded-md px-1 hover:bg-[#FFBECE]'>
@@ -70,7 +70,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
-        <div className='md:w-1/3 menu hidden md:block justify-start' id='navbar'>
+        <div className='md:w-1/3 menu hidden md:block justify-start ' id='navbar'>
           <ul className='flex w-full p-4 md:p-0 md:flex-row md:space-x-8 mt-0'>
             {navLinks.map((link, index) => (
               <li key={index}>
