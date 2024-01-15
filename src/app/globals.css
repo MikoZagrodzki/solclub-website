@@ -27,17 +27,17 @@ body {
 }
 
 /* public/fonts/pixel-font.ttf */
-/* @font-face {
-  font-family: 'PixelFont';
-  src: url('/fonts/pixel-font.ttf') format('truetype');
+@font-face {
+  font-family: 'cheeseFont';
+  src: url('/fonts/drawing-font.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
-} */
+}
 
-/* body {
-  font-family: 'PixelFont', sans-serif;
-} */
+body {
+  font-family: 'cheeseFont', sans-serif;
+}
 
 #pixel_font {
-  font-family: 'PixelFont', sans-serif;
+  font-family: 'cheeseFont', sans-serif;
 }

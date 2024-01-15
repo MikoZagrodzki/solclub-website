@@ -9,7 +9,7 @@ const MenuOverlay = ({ links }) => {
       {links.map((link, index) => (
         <li key={index}>
           <Link href={link.path} target='_blank'>
-            <Image src={link.img} alt={link.alt} />
+          {link.comp}
           </Link>
         </li>
       ))}
