@@ -12,7 +12,7 @@ import TelegramIcon from '../../../public/telegram-icon.png';
 import XIcon from '../../../public/x-icon.png';
 
 import connectWallet from '../../../public//images/connectwallet-logo.png';
-import XiconComp from './svgComponents/xiconComp';
+import XiconComp from './svgComponents/XiconComp';
 import TelegramIconComp from './svgComponents/TelegramIconComp';
 import DexScreenerComp from './svgComponents/DexScreenerComp';
 
