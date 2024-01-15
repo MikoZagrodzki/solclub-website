@@ -3,12 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import './Festival.module.css'; // Import a CSS file for styles
 import imageMapResize from './imageMapResizer';
-import pinIcon from '../../../public/pin-location-icon.svg';
 import Modal from 'react-modal';
-import djBonkLogo from '../../../public/images/djbonk-logo.png';
 
-import dexIcon from '../../../public/pinIcons/dex-pin.png';
-import djBonkLogoTransparent from '../../../public/images/dj-background-removebg.png';
 
 function Festival() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -132,7 +128,7 @@ function Festival() {
         {/* Your modal content here, using the selectedPin data */}
         <div className='flex flex-col items-center gap-2 relative'>
           <div className='mb-2 flex flex-col items-center gap-1'>
-            <Image src={djBonkLogo} width={80} className='' />
+            <Image src="./images/djbonk-logo.png" width={80} className='' />
             <h2 className='font-semibold'>{selectedPin?.modalTitle}</h2>
           </div>
           <p>{selectedPin?.modalText}</p>
