@@ -45,7 +45,7 @@ const Navbar = () => {
       <div className=' flex flex-row-reverse container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2'>
         <div className='w-1/3 flex justify-end'>
           <button className=' bg-white rounded-md px-1 hover:bg-[#FFBECE]'>
-            <Image src={connectWallet} width={100} height={100} className='shadow-xl'/>
+            <Image src={connectWallet} alt='Connnect Wallet' width={100} height={100} className='shadow-xl'/>
           </button>
         </div>
         <div className='w-1/3 flex justify-center'>
