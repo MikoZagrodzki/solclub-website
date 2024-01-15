@@ -129,9 +129,9 @@ function Festival() {
         <div className='flex flex-col items-center gap-2 relative'>
           <div className='mb-2 flex flex-col items-center gap-1'>
             <Image src="/images/djbonk-logo.png" width={80} className='' />
-            <h2 className='font-semibold'>{selectedPin?.modalTitle}</h2>
+            <h2 className='font-semibold text-black'>{selectedPin?.modalTitle}</h2>
           </div>
-          <p>{selectedPin?.modalText}</p>
+          <p className='text-black' >{selectedPin?.modalText}</p>
           <a href={selectedPin?.href} target="_blank" className='bg-gradient-radial  from-[#E664BE]  to-[#E66484] px-4 p-2 rounded-md cursor-pointer text-white' >{selectedPin?.buttonText}</a>
           <button className='absolute top-0 right-0 bg-gradient-radial   from-[#E664BE]  to-[#E66484] px-2 rounded-md cursor-pointer text-white' onClick={closeModal}>
             X
