@@ -48,7 +48,7 @@ function Festival() {
     ? [
       { x: 293, y: 2350, modalTitle: 'DEX', modalText: 'We are working on our own dex', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
       { x: 1803, y: 2350, modalTitle: 'Prepaid Card', modalText: 'We are working on it', iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
-      { x: 234, y: 2020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open' },
+      { x: 234, y: 2020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
       { x: 1911, y: 2020, modalTitle: 'Youtube Channel', modalText: 'Come with us to Chill to our music', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
       { x: 1954, y: 1560, modalTitle: 'Telegram Mixer', modalText: 'Mix money - be anonymous', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
 
@@ -56,7 +56,7 @@ function Festival() {
     : [
         { x: 2527, y: 1013,  modalTitle: 'DEX', modalText: 'We are working on our own dex', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
         { x: 1278, y: 1109, modalTitle: 'Prepaid Card', modalText: 'We are working on it', iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
-        { x: 2884, y: 1020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open' },
+        { x: 2884, y: 1020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
         { x: 939, y: 944, modalTitle: 'Youtube Channel', modalText: 'Come with us to Chill to our music', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
         { x: 2205, y: 1430, modalTitle: 'Telegram Mixer', modalText: 'Mix money - be anonymous', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
 
@@ -90,6 +90,16 @@ function Festival() {
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.5)', // Change overlay background color and transparency
     },
+  };
+
+  const openPdfInNewTab = (pdfUrl) => {
+    // Open the PDF in a new tab
+    const newWindow = window.open(pdfUrl, '_blank');
+  
+    // Focus on the new tab (optional)
+    if (newWindow) {
+      newWindow.focus();
+    }
   };
 
   return (
@@ -128,11 +138,11 @@ function Festival() {
         {/* Your modal content here, using the selectedPin data */}
         <div className='flex flex-col items-center gap-2 relative'>
           <div className='mb-2 flex flex-col items-center gap-1'>
-            <Image src="/images/djbonk-logo.png" width={80} className='' />
+            <Image src="/images/djbonk-logo.png" width={80} height={80} className='' />
             <h2 className='font-semibold text-black'>{selectedPin?.modalTitle}</h2>
           </div>
           <p className='text-black' >{selectedPin?.modalText}</p>
-          <a href={selectedPin?.href} target="_blank" className='bg-gradient-radial  from-[#E664BE]  to-[#E66484] px-4 p-2 rounded-md cursor-pointer text-white' >{selectedPin?.buttonText}</a>
+          <a href={selectedPin?.href} target="_blank" onClick={selectedPin?.onClick} className='bg-gradient-radial  from-[#E664BE]  to-[#E66484] px-4 p-2 rounded-md cursor-pointer text-white' >{selectedPin?.buttonText}</a>
           <button className='absolute top-0 right-0 bg-gradient-radial   from-[#E664BE]  to-[#E66484] px-2 rounded-md cursor-pointer text-white' onClick={closeModal}>
             X
           </button>
