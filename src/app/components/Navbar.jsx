@@ -21,19 +21,19 @@ const navLinks = [
     path: 'https://dexscreener.com/solana/4vuifb38tru1adpdghbvcz4c7hxhes1hfa2v8xjferfw',
     img: DexIcon,
     alt: 'Dex Screener',
-    comp: <DexScreenerComp baseColor='white' hoverColor='#FFBECE' />,
+    comp: <DexScreenerComp baseColor='white' hoverColor='#F6E2F6' />,
   },
   {
     path: 'https://t.me/djbonksol',
     img: TelegramIcon,
     alt: 'Telegram',
-    comp: <TelegramIconComp baseColor='white' hoverColor='#FFBECE' />,
+    comp: <TelegramIconComp baseColor='white' hoverColor='#F6E2F6' />,
   },
   {
     path: 'https://twitter.com/djbonksol',
     img: XIcon,
     alt: 'twitter',
-    comp: <XiconComp baseColor='white' hoverColor='#FFBECE' />,
+    comp: <XiconComp baseColor='white' hoverColor='#F6E2F6' />,
   },
 ];
 
@@ -44,8 +44,8 @@ const Navbar = () => {
     <nav className={`fixed mx-auto top-0 left-0 right-0  z-20 ${navbarOpen&&' border-b-2 bg-black bg-opacity-30'}`}>
       <div className=' flex flex-row-reverse container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2'>
         <div className='w-1/3 flex justify-end'>
-          <button className=' bg-white rounded-md px-1 hover:bg-[#FFBECE]'>
-            <Image src={connectWallet} alt='Connnect Wallet' width={100} height={100} className='shadow-xl'/>
+          <button className=' bg-white rounded-md px-1 hover:bg-[#F9EAF9]'>
+            <Image src={connectWallet} alt='Connnect Wallet' width={100} height={100} className='shadow-xl '/>
           </button>
         </div>
         <div className='w-1/3 flex justify-center'>

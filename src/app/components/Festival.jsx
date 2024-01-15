@@ -86,6 +86,8 @@ function Festival() {
       padding: '20px', // Add padding
       maxWidth: '400px', // Set max width
       width: '350px',
+      boxShadow: '0 8px 16px rgba(0, 0, 0, 0.8)',
+      
     },
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.5)', // Change overlay background color and transparency
@@ -142,8 +144,8 @@ function Festival() {
             <h2 className='font-semibold text-black'>{selectedPin?.modalTitle}</h2>
           </div>
           <p className='text-black' >{selectedPin?.modalText}</p>
-          <a href={selectedPin?.href} target="_blank" onClick={selectedPin?.onClick} className='bg-gradient-radial  from-[#E664BE]  to-[#E66484] px-4 p-2 rounded-md cursor-pointer text-white' >{selectedPin?.buttonText}</a>
-          <button className='absolute top-0 right-0 bg-gradient-radial   from-[#E664BE]  to-[#E66484] px-2 rounded-md cursor-pointer text-white' onClick={closeModal}>
+          <a href={selectedPin?.href} target="_blank" onClick={selectedPin?.onClick} className='bg-gradient-radial  from-[#E664BE]  to-[#E66484] px-4 p-2 rounded-md cursor-pointer text-white shadow-xl hover:opacity-80' >{selectedPin?.buttonText}</a>
+          <button className='absolute top-0 right-0 bg-gradient-radial   from-[#E664BE]  to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:opacity-80' onClick={closeModal}>
             X
           </button>
         </div>
