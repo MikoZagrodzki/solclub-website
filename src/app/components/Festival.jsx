@@ -46,19 +46,19 @@ function Festival() {
 
   const iconsPositions = isSmallScreen
     ? [
-      { x: 293, y: 2350, modalTitle: 'DEX', modalText: 'We are working on our own dex', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
-      { x: 1803, y: 2350, modalTitle: 'Prepaid Card', modalText: 'We are working on it', iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
-      { x: 234, y: 2020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
-      { x: 1911, y: 2020, modalTitle: 'Youtube Channel', modalText: 'Come with us to Chill to our music', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
-      { x: 1954, y: 1560, modalTitle: 'Telegram Mixer', modalText: 'Mix money - be anonymous', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
+      { x: 293, y: 2350, modalTitle: 'DEX', modalText: 'If you hate Raydium as much as we do, drop by in a bit, let us cook', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
+      { x: 1803, y: 2350, modalTitle: 'Prepaid Cards', modalText: `Your partner laughing at virtual money again? Buy her an Amazon voucher, that'll keep it quiet`, iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
+      { x: 234, y: 2020, modalTitle: 'Bonk Papers', modalText: 'Awesome Guide on How to Get to a Festival and Have a Blast', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
+      { x: 1911, y: 2020, modalTitle: 'Youtube Channel', modalText: 'When was your first time with a green dildo on your favorite memecoin? What were you listening to then?', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
+      { x: 1954, y: 1560, modalTitle: 'Telegram Mixer', modalText: 'Mixer $DJBONK is a Telegram bot for secure, anonymous crypto transactions, enhancing user safety on the Solana blockchain', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
 
       ]
     : [
-        { x: 2527, y: 1013,  modalTitle: 'DEX', modalText: 'We are working on our own dex', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
-        { x: 1278, y: 1109, modalTitle: 'Prepaid Card', modalText: 'We are working on it', iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
-        { x: 2884, y: 1020, modalTitle: 'Bonk Papers', modalText: 'Stuff for nerds', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
-        { x: 939, y: 944, modalTitle: 'Youtube Channel', modalText: 'Come with us to Chill to our music', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
-        { x: 2205, y: 1430, modalTitle: 'Telegram Mixer', modalText: 'Mix money - be anonymous', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
+        { x: 2527, y: 1013,  modalTitle: 'DEX', modalText: 'If you hate Raydium as much as we do, drop by in a bit, let us cook', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
+        { x: 1278, y: 1109, modalTitle: 'Prepaid Cards', modalText: `Your partner laughing at virtual money again? Buy her an Amazon voucher, that'll keep it quiet`, iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
+        { x: 2884, y: 1020, modalTitle: 'Bonk Papers', modalText: 'Awesome Guide on How to Get to a Festival and Have a Blast', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
+        { x: 939, y: 944, modalTitle: 'Youtube Channel', modalText: 'When was your first time with a green dildo on your favorite memecoin? What were you listening to then?', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
+        { x: 2205, y: 1430, modalTitle: 'Telegram Mixer', modalText: 'Mixer $DJBONK is a Telegram bot for secure, anonymous crypto transactions, enhancing user safety on the Solana blockchain', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
 
       ];
 
@@ -143,7 +143,7 @@ function Festival() {
             <Image src="/images/djbonk-logo.png" alt={selectedPin?.modalTitle} width={80} height={80} title={selectedPin?.modalTitle} className='' />
             <h2 className='font-semibold text-black'>{selectedPin?.modalTitle}</h2>
           </div>
-          <p className='text-black' >{selectedPin?.modalText}</p>
+          <p className='text-black text-center' >{selectedPin?.modalText}</p>
           <a href={selectedPin?.href} target="_blank" onClick={selectedPin?.onClick} className='bg-gradient-radial  from-[#E664BE]  to-[#E66484] px-4 p-2 rounded-md cursor-pointer text-white shadow-xl hover:opacity-80' >{selectedPin?.buttonText}</a>
           <button className='absolute top-0 right-0 bg-gradient-radial   from-[#E664BE]  to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:opacity-80' onClick={closeModal} title='Close popup'>
             X
