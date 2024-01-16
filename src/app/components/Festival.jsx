@@ -47,11 +47,12 @@ function Festival() {
 
   const iconsPositions = isSmallScreen
     ? [
-      { x: 293, y: 2350, modalTitle: 'DEX', modalText: 'If you hate Raydium as much as we do, drop by in a bit, let us cook', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
+      { x: 293, y: 2375, modalTitle: 'DEX', modalText: 'If you hate Raydium as much as we do, drop by in a bit, let us cook', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
       { x: 1803, y: 2350, modalTitle: 'Prepaid Cards', modalText: `Your partner laughing at virtual money again? Buy her an Amazon voucher, that'll keep it quiet`, iconSrc: '/pinIcons/card-icon.png', buttonText: 'Coming soon' },
-      { x: 234, y: 2020, modalTitle: 'Bonk Papers', modalText: 'Awesome Guide on How to Get to a Festival and Have a Blast', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
+      { x: 234, y: 2010, modalTitle: 'Bonk Papers', modalText: 'Awesome Guide on How to Get to a Festival and Have a Blast', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
       { x: 1911, y: 2020, modalTitle: 'Youtube Channel', modalText: 'When was your first time with a green dildo on your favorite memecoin? What were you listening to then?', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
       { x: 1954, y: 1560, modalTitle: 'Telegram Mixer', modalText: 'Mixer $DJBONK is a Telegram bot for secure, anonymous crypto transactions, enhancing user safety on the Solana blockchain', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
+      { x: 533, y: 3122, modalTitle: 'Swap', modalText: 'Here you can buy $DJBONK tokens', iconSrc: '/pinIcons/swap-icon.png', buttonText: 'Raydium', href: 'https://raydium.io/swap/?inputCurrency=sol&outputCurrency=22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3&fixed=in', buttonImg: '/images/Raydium-logo.png', buttonText2: 'Jupiter', href2: 'https://jup.ag/swap/SOL-DJBONK_22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3', buttonImg2: '/images/Jupiter-logo.png' },
 
       ]
     : [
@@ -112,21 +113,22 @@ function Festival() {
         <div>
           <img useMap='#image_map' src='/images/dj-mobile-background.jpg' alt='Festival Background' width={2160} height={3840} className='' />
           <map name='image_map'>
-            <area alt='' title='' href='dex' coords='293,2350' shape='circle' />
-            <area alt='' title='' href='paper' coords='234,2020' shape='circle' />
+            <area alt='' title='' href='dex' coords='293,2375' shape='circle' />
+            <area alt='' title='' href='paper' coords='234,2010' shape='circle' />
             <area alt='' title='' href='youtube' coords='1885,2020' shape='circle' />
-            <area alt='' title='' href='card' coords='1803,2350,4' shape='circle' />
-            <area alt="" title="" href="mixer" coords="1954,1560,9" shape="circle"/>
+            <area alt='' title='' href='card' coords='1803,2350' shape='circle' />
+            <area alt="" title="" href="mixer" coords="1954,1560" shape="circle"/>
+            <area alt="" title="" href="swap" coords="533,3122" shape="circle"/>
           </map>
         </div>
       ) : (
         <div>
           <img useMap='#image_map' src='/images/dj-background-removebg.png' alt='Festival Background' width={3840} height={2160} className='' />
           <map name='image_map'>
-            <area alt='dex' title='dex' href='dex' coords='2527,1013,13' shape='circle' />
-            <area alt='paper' title='paper' href='paper' coords='2884,1020,8' shape='circle' />
-            <area alt='youtube' title='youtube' href='youtube' coords='939,944,13' shape='circle' />
-            <area alt='card' title='card' href='card' coords='1278,1109,10' shape='circle' />
+            <area alt='dex' title='dex' href='dex' coords='2527,1013' shape='circle' />
+            <area alt='paper' title='paper' href='paper' coords='2884,1020' shape='circle' />
+            <area alt='youtube' title='youtube' href='youtube' coords='939,944' shape='circle' />
+            <area alt='card' title='card' href='card' coords='1278,1109' shape='circle' />
             <area alt="" title="" href="mixer" coords="2205,1430" shape="circle"/>
             <area alt="" title="" href="swap" coords="1435,1420" shape="circle"/>
           </map>
