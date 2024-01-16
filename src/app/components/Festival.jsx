@@ -4,6 +4,7 @@ import Image from 'next/image';
 import './Festival.module.css'; // Import a CSS file for styles
 import imageMapResize from './imageMapResizer';
 import Modal from 'react-modal';
+import Link from 'next/link';
 
 
 function Festival() {
@@ -59,6 +60,7 @@ function Festival() {
         { x: 2884, y: 1020, modalTitle: 'Bonk Papers', modalText: 'Awesome Guide on How to Get to a Festival and Have a Blast', iconSrc: '/pinIcons/paper-icon.png', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
         { x: 939, y: 944, modalTitle: 'Youtube Channel', modalText: 'When was your first time with a green dildo on your favorite memecoin? What were you listening to then?', iconSrc: '/pinIcons/youtube-icon.png', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
         { x: 2205, y: 1430, modalTitle: 'Telegram Mixer', modalText: 'Mixer $DJBONK is a Telegram bot for secure, anonymous crypto transactions, enhancing user safety on the Solana blockchain', iconSrc: '/pinIcons/mixer-icon.png', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
+        { x: 1435, y: 1420, modalTitle: 'Swap', modalText: 'Here you can buy $DJBONK tokens', iconSrc: '/pinIcons/swap-icon.png', buttonText: 'Raydium', href: 'https://raydium.io/swap/?inputCurrency=sol&outputCurrency=22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3&fixed=in', buttonImg: '/images/Raydium-logo.png', buttonText2: 'Jupiter', href2: 'https://jup.ag/swap/SOL-DJBONK_22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3', buttonImg2: '/images/Jupiter-logo.png' },
 
       ];
 
@@ -126,6 +128,7 @@ function Festival() {
             <area alt='youtube' title='youtube' href='youtube' coords='939,944,13' shape='circle' />
             <area alt='card' title='card' href='card' coords='1278,1109,10' shape='circle' />
             <area alt="" title="" href="mixer" coords="2205,1430" shape="circle"/>
+            <area alt="" title="" href="swap" coords="1435,1420" shape="circle"/>
           </map>
         </div>
       )}
@@ -144,7 +147,17 @@ function Festival() {
             <h2 className='font-semibold text-black'>{selectedPin?.modalTitle}</h2>
           </div>
           <p className='text-black text-center' >{selectedPin?.modalText}</p>
-          <a href={selectedPin?.href} target="_blank" onClick={selectedPin?.onClick} className='bg-gradient-radial  from-[#E664BE]  to-[#E66484] px-4 p-2 rounded-md cursor-pointer text-white shadow-xl hover:opacity-80' >{selectedPin?.buttonText}</a>
+          {(!selectedPin?.buttonText2 && !selectedPin?.buttonImg)&& <a href={selectedPin?.href} target="_blank" onClick={selectedPin?.onClick} className='bg-gradient-radial  from-[#E664BE]  to-[#E66484] px-4 p-2 rounded-md cursor-pointer text-white shadow-xl hover:opacity-80' >{selectedPin?.buttonText}</a>}
+          {(selectedPin?.buttonImg && selectedPin?.buttonImg2) && 
+          <div className='flex gap-2'>
+            <Link href={selectedPin.href} target='_blank'>
+            <Image src={selectedPin.buttonImg} className='rounded-md hover:opacity-80' alt={selectedPin.buttonText} width={100} height={80}/>
+            </Link>
+            <Link href={selectedPin.href2} target='_blank'>
+            <Image src={selectedPin.buttonImg2} className='rounded-md  hover:opacity-80' alt={selectedPin.buttonText2} width={100} height={80}/>
+            </Link>
+          </div>
+          }
           <button className='absolute top-0 right-0 bg-gradient-radial   from-[#E664BE]  to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:opacity-80' onClick={closeModal} title='Close popup'>
             X
           </button>
