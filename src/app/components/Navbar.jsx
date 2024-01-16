@@ -49,7 +49,7 @@ const Navbar = () => {
           </button>
         </div>
         <div className='w-1/3 flex justify-center'>
-        <Link href={'/'} className='w-1/3 text-2xl md:text-5xl text-white font-semibold flex items-center gap-1'>
+        <Link href={'/'} className='w-1/3 text-2xl md:text-5xl text-white font-semibold flex items-center justify-center gap-1'>
           <Image src='/images/djbonk-logo-transparent.png' alt='hero image' width={60} height={60} className='' />
         </Link>
         </div>
