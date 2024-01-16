@@ -1,9 +1,4 @@
-import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
-import AboutSection from "./components/AboutSection";
-import ChartComponent from "./components/ChartComponent";
-import EmailSection from "./components/EmailSection";
-import Footer from "./components/Footer";
 import AchievementsSection from "./components/AchievementsSection";
 import Festival from "./components/Festival";
 
@@ -13,13 +8,8 @@ export default function Home() {
       <Navbar />
       <div className="container mt-24 mx-auto p-2">
         <Festival/>
-        {/* <HeroSection /> */}
         {/* <AchievementsSection /> */}
-        {/* <AboutSection /> */}
-        {/* <ChartComponent /> */}
-        {/* <EmailSection /> */}
       </div>
-      {/* <Footer /> */}
     </main>
   );
 }

@@ -1,16 +1,13 @@
 'use client';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import NavLink from './NavLink';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import MenuOverlay from './MenuOverlay';
 import Image from 'next/image';
 import './navbar.css';
-
 import DexIcon from '../../../public/dexscreener-icon.png';
 import TelegramIcon from '../../../public/telegram-icon.png';
 import XIcon from '../../../public/x-icon.png';
-
 import connectWallet from '../../../public//images/connectwallet-logo.png';
 import XiconComp from './svgComponents/XiconComp';
 import TelegramIconComp from './svgComponents/TelegramIconComp';

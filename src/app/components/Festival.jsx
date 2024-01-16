@@ -13,6 +13,7 @@ function Festival() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPin, setSelectedPin] = useState(null);
 
+  //THIS CHANGES BACKGROUND TO DIFFERENT IMAGE ON SMALL SCREEN
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 640); // Adjust the breakpoint as needed
@@ -26,10 +27,12 @@ function Festival() {
     };
   }, []);
 
+  //THIS MAKES IMAGE MAP RESPONSIVE
   useEffect(() => {
     imageMapResize();
   }, []);
 
+  //THIS HELPS TO KEEP TRACK OF THE IMAGE MAP IN CASE OF IMAGE RESOLUTION
   const iconStyle = (x, y) =>
     isSmallScreen
       ? {
@@ -45,6 +48,7 @@ function Festival() {
           transform: 'translate(-50%, -50%)', // Center the icon on the coordinates
         };
 
+  //HERE YOU CAN ADD MORE MAP POINTS TO THE IMAGE
   const iconsPositions = isSmallScreen
     ? [
       { x: 293, y: 2375, modalTitle: 'DEX', modalText: 'If you hate Raydium as much as we do, drop by in a bit, let us cook', iconSrc: '/pinIcons/dex-pin.png', buttonText: 'Coming soon' },
@@ -65,6 +69,7 @@ function Festival() {
 
       ];
 
+  //FUNCTIONS FOR THE POPUP
   const openModal = (pin) => {
     setSelectedPin(pin);
     setIsModalOpen(true);
@@ -75,6 +80,7 @@ function Festival() {
     setIsModalOpen(false);
   };
 
+  //POPUP STYLES
   const modalStyles = {
     content: {
       top: '50%',
@@ -97,6 +103,7 @@ function Festival() {
     },
   };
 
+  //PDF OPEN FUNCTION
   const openPdfInNewTab = (pdfUrl) => {
     // Open the PDF in a new tab
     const newWindow = window.open(pdfUrl, '_blank');
