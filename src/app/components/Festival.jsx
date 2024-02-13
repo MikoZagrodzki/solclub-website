@@ -104,13 +104,13 @@ function Festival() {
       <div className='flex justify-center container'>
         <img useMap='#image_map' src='/images/shake-bg-svg.svg' alt='Shake Background' width={1080} height={720} className='' />
         <map name='image_map'>
-          <area alt='bot' title='bot' href='bot' coords='380,415' shape='circle' />
+          {/* <area alt='bot' title='bot' href='bot' coords='380,415' shape='circle' />
           <area alt='buy' title='buy' href='buy' coords='500,600' shape='circle' />
           <area alt='cards' title='cards' href='cards' coords='630,325' shape='circle' />
           <area alt='lapDance' title='lapDance' href='lapDance' coords='1000,500' shape='circle' />
           <area alt='lottery' title='lottery' href='lottery' coords='260,400' shape='circle' />
           <area alt='nft' title='nft' href='nft' coords='501,385' shape='circle' />
-          <area alt='paper' title='paper' href='paper' coords='950,350' shape='circle' />
+          <area alt='paper' title='paper' href='paper' coords='950,350' shape='circle' /> */}
         </map>
       </div>
       {iconsPositions.map((pos, index) => (
