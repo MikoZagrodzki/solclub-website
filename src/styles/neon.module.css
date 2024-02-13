@@ -1,0 +1,9 @@
+/* styles.module.css */
+
+.icon {
+    transition: fill 0.3s ease;
+  }
+  
+  .icon:hover {
+    fill: red; /* Change this to the desired color */
+  }

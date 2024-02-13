@@ -9,28 +9,27 @@ import DexIcon from '../../../public/dexscreener-icon.png';
 import TelegramIcon from '../../../public/telegram-icon.png';
 import XIcon from '../../../public/x-icon.png';
 import connectWallet from '../../../public//images/connectwallet-logo.png';
-import XiconComp from './svgComponents/XiconComp';
-import TelegramIconComp from './svgComponents/TelegramIconComp';
-import DexScreenerComp from './svgComponents/DexScreenerComp';
+
+
 
 const navLinks = [
   {
     path: 'https://dexscreener.com/solana/4vuifb38tru1adpdghbvcz4c7hxhes1hfa2v8xjferfw',
     img: DexIcon,
     alt: 'Dex Screener',
-    comp: <DexScreenerComp baseColor='white' hoverColor='#F6E2F6' />,
+    comp: <Image src='/icons/dex-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
   },
   {
     path: 'https://t.me/djbonksol',
     img: TelegramIcon,
     alt: 'Telegram',
-    comp: <TelegramIconComp baseColor='white' hoverColor='#F6E2F6' />,
+    comp: <Image src='/icons/telegram-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
   },
   {
     path: 'https://twitter.com/djbonksol',
     img: XIcon,
     alt: 'twitter',
-    comp: <XiconComp baseColor='white' hoverColor='#F6E2F6' />,
+    comp: <Image src='/icons/x-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
   },
 ];
 
@@ -41,27 +40,27 @@ const Navbar = () => {
     <nav className={`fixed mx-auto top-0 left-0 right-0  z-20 ${navbarOpen&&' border-b-2 bg-black bg-opacity-30'}`}>
       <div className=' flex flex-row-reverse container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2'>
         <div className='w-1/3 flex justify-end'>
-          <button className=' bg-white rounded-md px-1 hover:bg-[#F9EAF9]'>
+          {/* <button className=' bg-white rounded-md px-1 hover:bg-[#F9EAF9]'>
             <Image src={connectWallet} alt='Connnect Wallet' width={100} height={100} className='shadow-xl '/>
-          </button>
+          </button> */}
         </div>
         <div className='w-1/3 flex justify-center'>
         <Link href={'/'} className='w-1/3 text-2xl md:text-5xl text-white font-semibold flex items-center justify-center gap-1'>
-          <Image src='/images/djbonk-logo-transparent.png' alt='hero image' width={60} height={60} className='' />
+          <Image src='/icons/shake-icon.svg' alt='hero image' width={80} height={80} className='' />
         </Link>
         </div>
         <div className='w-1/3 mobile-menu block md:hidden'>
           {!navbarOpen ? (
             <button
               onClick={() => setNavbarOpen(true)}
-              className='flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white'
+              className='flex items-center px-3 py-2 border rounded border-black text-black hover:text-pink-400 hover:border-pink-600'
             >
               <Bars3Icon className='h-5 w-5' />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
-              className=' flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white'
+              className=' flex items-center px-3 py-2 border rounded border-black text-black  hover:text-pink-400 hover:border-pink-600'
             >
               <XMarkIcon className='h-5 w-5' />
             </button>
