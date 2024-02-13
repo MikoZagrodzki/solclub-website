@@ -14,19 +14,19 @@ import connectWallet from '../../../public//images/connectwallet-logo.png';
 
 const navLinks = [
   {
-    path: 'https://dexscreener.com/solana/4vuifb38tru1adpdghbvcz4c7hxhes1hfa2v8xjferfw',
+    path: '',
     img: DexIcon,
     alt: 'Dex Screener',
     comp: <Image src='/icons/dex-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
   },
   {
-    path: 'https://t.me/djbonksol',
+    path: '',
     img: TelegramIcon,
     alt: 'Telegram',
     comp: <Image src='/icons/telegram-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
   },
   {
-    path: 'https://twitter.com/djbonksol',
+    path: '',
     img: XIcon,
     alt: 'twitter',
     comp: <Image src='/icons/x-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
