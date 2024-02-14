@@ -15,4 +15,7 @@
   .custom-bounce {
     animation: custom-bounce 3s infinite; /* You can adjust the animation duration as needed */
   }
-  
+  .image {
+
+  height: auto; /* Maintain aspect ratio */
+}
