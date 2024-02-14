@@ -17,19 +17,19 @@ const navLinks = [
     path: '',
     img: DexIcon,
     alt: 'Dex Screener',
-    comp: <Image src='/icons/dex-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
+    comp: <Image src='/icons/dex-icon.svg' width={50} height={50} baseColor='white' hoverColor='#F6E2F6' className='hover:scale-105'/>,
   },
   {
     path: '',
     img: TelegramIcon,
     alt: 'Telegram',
-    comp: <Image src='/icons/telegram-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
+    comp: <Image src='/icons/telegram-icon.svg' width={50} height={50} baseColor='white' hoverColor='#F6E2F6' className='hover:scale-105'/>,
   },
   {
     path: '',
     img: XIcon,
     alt: 'twitter',
-    comp: <Image src='/icons/x-icon.svg' width={40} height={40} baseColor='white' hoverColor='#F6E2F6' />,
+    comp: <Image src='/icons/x-icon.svg' width={50} height={50} baseColor='white' hoverColor='#F6E2F6' className='hover:scale-105'/>,
   },
 ];
 
@@ -45,7 +45,7 @@ const Navbar = () => {
           </button> */}
         </div>
         <div className='w-1/3 flex justify-center'>
-        <Link href={'/'} className='w-1/3 text-2xl md:text-5xl text-white font-semibold flex items-center justify-center gap-1'>
+        <Link href={'/'} className='w-1/3 text-2xl md:text-5xl text-white font-semibold flex items-center justify-center gap-1 hover:scale-105'>
           <Image src='/icons/shake-icon.svg' alt='hero image' width={80} height={80} className='' />
         </Link>
         </div>

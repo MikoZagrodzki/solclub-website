@@ -17,11 +17,14 @@ function Festival() {
 
   const [hoveredIndex, setHoveredIndex] = useState(null); // State to track currently hovered icon index
 
+  const [widowSize, setWindowSize] = useState(null);
+
 
   //THIS CHANGES BACKGROUND TO DIFFERENT IMAGE ON SMALL SCREEN
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 640); // Adjust the breakpoint as needed
+      setWindowSize(window.innerWidth);
     };
 
     handleResize(); // Set initial screen size
@@ -47,13 +50,14 @@ function Festival() {
 
   //HERE YOU CAN ADD MORE MAP POINTS TO THE IMAGE
   const iconsPositions = [
-        { x: 380, y: 415, modalSvgSrc:"/modalContent/shake-bot.svg",  iconSrcActive:"/pinIcons/shake-bot-active.svg", iconSrc: '/pinIcons/shake-bot.svg', buttonText: 'Coming soon' },
-        { x: 500, y: 600, modalSvgSrc:"/modalContent/shake-buy.svg", iconSrcActive:"/pinIcons/shake-buy-active.svg", iconSrc: '/pinIcons/shake-buy.svg', buttonText: 'Coming soon' },
-        { x: 630, y: 325, modalSvgSrc:"/modalContent/shake-cards.svg", iconSrcActive:"/pinIcons/shake-cards-active.svg", iconSrc: '/pinIcons/shake-cards.svg', buttonText: 'Open', onClick: () => openPdfInNewTab('/pdf/bonkpaper.pdf')},
-        { x: 1000, y: 500, modalSvgSrc:"/modalContent/shake-lapDance.svg", iconSrcActive:"/pinIcons/shake-dance-active.svg", iconSrc: '/pinIcons/shake-dance.svg', buttonText: 'Open YouTube', href: 'https://www.youtube.com/@djbonksolana' },
-        { x: 260, y: 400, modalSvgSrc:"/modalContent/shake-lottery.svg", iconSrcActive:"/pinIcons/shake-lottery-active.svg", iconSrc: '/pinIcons/shake-lottery.svg', buttonText: 'Open Mixer', href: 'https://t.me/djbonk_bot' },
-        { x: 501, y: 385, modalSvgSrc:"/modalContent/shake-nft.svg",  iconSrcActive:"/pinIcons/shake-nft-active.svg", iconSrc: '/pinIcons/shake-nft.svg', buttonText: 'Raydium', href: 'https://raydium.io/swap/?inputCurrency=sol&outputCurrency=22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3&fixed=in', buttonImg: '/images/Raydium-logo.png', buttonText2: 'Jupiter', href2: 'https://jup.ag/swap/SOL-DJBONK_22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3', buttonImg2: '/images/Jupiter-logo.png' },
-        { x: 950, y: 350, modalSvgSrc:"/modalContent/shake-paper.svg", iconSrcActive:"/pinIcons/shake-paper-active.svg", iconSrc: '/pinIcons/shake-paper.svg', buttonText: 'Raydium', href: 'https://raydium.io/swap/?inputCurrency=sol&outputCurrency=22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3&fixed=in', buttonImg: '/images/Raydium-logo.png', buttonText2: 'Jupiter', href2: 'https://jup.ag/swap/SOL-DJBONK_22wZhMtqGPqyFKefPBNM8T5T5zKjwrWfDnfGW46SU9N3', buttonImg2: '/images/Jupiter-logo.png' },
+        { x: 380, y: 415, modalTitle:'bot', modalSvgSrc:"/modalContent/shake-bot.svg",  iconSrcActive:"/pinIcons/shake-bot-active.svg", iconSrc: '/pinIcons/shake-bot.svg',  class:''},
+        { x: 630, y: 325, modalTitle:'cards', modalSvgSrc:"/modalContent/shake-cards.svg", iconSrcActive:"/pinIcons/shake-cards-active.svg", iconSrc: '/pinIcons/shake-cards.svg', class:''},
+        { x: 260, y: 400, modalTitle:'lottery', modalSvgSrc:"/modalContent/shake-lottery.svg", iconSrcActive:"/pinIcons/shake-lottery-active.svg", iconSrc: '/pinIcons/shake-lottery.svg', class:'' },
+        { x: 501, y: 385, modalTitle:'nft', modalSvgSrc:"/modalContent/shake-nft.svg",  iconSrcActive:"/pinIcons/shake-nft-active.svg", iconSrc: '/pinIcons/shake-nft.svg', class:'z-0' },
+        { x: 500, y: 600, modalTitle:'buy', modalSvgSrc:"/modalContent/shake-buy.svg", iconSrcActive:"/pinIcons/shake-buy-active.svg", iconSrc: '/pinIcons/shake-buy.svg',  class: 'z-40'},
+        { x: 950, y: 350, modalTitle:'paper', modalSvgSrc:"/modalContent/shake-paper.svg", iconSrcActive:"/pinIcons/shake-paper-active.svg", iconSrc: '/pinIcons/shake-paper.svg',class:'' },
+        { x: 1000, y: 500, modalTitle: 'lapDance', modalSvgSrc: "/modalContent/shake-lapDance.svg", iconSrcActive: "/pinIcons/shake-dance-active.png", iconSrc: '/pinIcons/shake-dance.png', class: '' },
+        { x: 385, y: 605, modalTitle:'manByBar', modalSvgSrc:"", iconSrcActive:"/pinIcons/shake-manByBar.svg", iconSrc: '/pinIcons/shake-manByBar.svg', class:'' },
 
       ];
 
@@ -114,23 +118,64 @@ function Festival() {
         </map>
       </div>
       {iconsPositions.map((pos, index) => (
-        <div
-          key={index}
-          style={iconStyle(pos.x, pos.y)}
-          className={`cursor-pointer`}
-          onClick={() => openModal(pos)}
-          onMouseEnter={() => setHoveredIndex(index)} // Update hoveredIndex on mouse enter
-          onMouseLeave={() => setHoveredIndex(null)}   // Reset hoveredIndex on mouse leave
-        >
-          <Image
-            src={hoveredIndex === index ? pos.iconSrcActive : pos.iconSrc}
-            alt={pos.title}
-            className={`scale-30 xs:scale-60 sm:scale-70 md:scale-100`}
-            width={95}
-            height={90}
-          />
-        </div>
-      ))}
+  <div
+    key={index}
+    style={iconStyle(pos.x, pos.y)}
+    className={`cursor-pointer`}
+    onClick={pos.modalTitle !== 'manByBar' ? () => openModal(pos) : null}
+    onMouseEnter={pos.modalTitle !== 'manByBar' ? () => setHoveredIndex(index) : null}
+    onMouseLeave={pos.modalTitle !== 'manByBar' ? () => setHoveredIndex(null) : null}
+  >
+    <Image
+      src={hoveredIndex === index ? pos.iconSrcActive : pos.iconSrc}
+      alt={pos?.modalTitle}
+      width={
+        pos.modalTitle === 'manByBar' || pos.modalTitle === 'lapDance' ? (
+          widowSize <= 480 ? 45 : 
+          widowSize <= 520 ? 65 :
+          widowSize <= 560 ? 70 :
+          widowSize <= 600 ? 73 :
+          widowSize <= 640 ? 80 : 
+          widowSize <= 680 ? 83 :
+          widowSize <= 720 ? 84 :
+          widowSize <= 760 ? 85 :
+          widowSize <= 768 ? 90 :
+          widowSize <= 800 ? 95 :
+          widowSize <= 840 ? 95 :
+          widowSize <= 880 ? 95 :
+          widowSize <= 920 ? 100 :
+          widowSize <= 960 ? 110 :
+          widowSize <= 1000 ? 120 :
+          widowSize <= 1040 ? 130 :
+          widowSize <= 1080 ? 140 :
+          150
+        ) : (
+          widowSize <= 480 ? 28 :
+          widowSize <= 520 ? 32 :
+          widowSize <= 560 ? 36 :
+          widowSize <= 600 ? 40 :
+          widowSize <= 640 ? 45 : 
+          widowSize <= 680 ? 50 :
+          widowSize <= 720 ? 55 :
+          widowSize <= 760 ? 60 :
+          widowSize <= 768 ? 60 :
+          widowSize <= 800 ? 65 :
+          widowSize <= 840 ? 67 :
+          widowSize <= 880 ? 70 :
+          widowSize <= 920 ? 72 :
+          widowSize <= 960 ? 80 :
+          widowSize <= 1000 ? 90 :
+          widowSize <= 1040 ? 92 :
+          widowSize <= 1080 ? 94 :
+          95
+        )
+      }
+      height={50}
+      className={`${pos?.class}`}
+    />
+  </div>
+))}
+
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} onRequestClose={closeModal} style={modalStyles} contentLabel='Pin Modal' className=''>
