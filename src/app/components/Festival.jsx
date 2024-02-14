@@ -21,6 +21,9 @@ function Festival() {
 
   const [widowSize, setWindowSize] = useState(null);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+
+
+
   const audioRef = useRef(null);
 
   const toggleMusic = () => {
@@ -116,9 +119,37 @@ function Festival() {
     }
   };
 
-  const getRandomDelayFactor = () => Math.random();
+    const getRandomDelayFactor = () => Math.random();
 
-
+    const [isSrcActive, setIsSrcActive] = useState({});
+    const [randomDelays, setRandomDelays] = useState({});
+  
+    useEffect(() => {
+      // Calculate random delays for each image
+      const delays = {};
+      iconsPositions.forEach((_, index) => {
+        delays[index] = Math.random() * 20000 + 5000; // Adjust the maximum delay time (in milliseconds) as needed and add a base delay of 5000 ms
+      });
+      setRandomDelays(delays);
+  
+      // Set up intervals with random delays
+      const intervals = iconsPositions.map((_, index) =>
+        setInterval(() => {
+          // Toggle the state for the current image index twice to create flicker effect
+          setIsSrcActive(prev => ({ ...prev, [index]: !prev[index] }));
+          setTimeout(() => {
+            setIsSrcActive(prev => ({ ...prev, [index]: !prev[index] }));
+          }, 300); // Adjust the duration of each flicker as needed (300ms for example)
+        }, delays[index])
+      );
+  
+      return () => {
+        // Clean up intervals on component unmount
+        intervals.forEach(interval => clearInterval(interval));
+      };
+    }, []); // Empty dependency array to run effect only once
+  
+  
   return (
     <div className='w-full h-full relative '>
       <div className='flex justify-center container'>
@@ -144,11 +175,12 @@ function Festival() {
   >
     <Image
       key={index}
-      src={hoveredIndex === index ? pos.iconSrcActive : pos.iconSrc}
+      src={hoveredIndex === index ? pos.iconSrcActive : isSrcActive[index] ? pos.iconSrcActive : pos.iconSrc}
+
+
       alt={pos?.modalTitle}
       className={`${pos.modalTitle !== 'manByBar' ? iconsAnimation.jumpAnimation : ''}`}
       style={{ '--delay-factor': getRandomDelayFactor() }}
-
       width={
         pos.modalTitle === 'manByBar' || pos.modalTitle === 'lapDance' ? (
           widowSize <= 480 ? 45 : 
