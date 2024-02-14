@@ -122,11 +122,12 @@ function Festival() {
     key={index}
     style={iconStyle(pos.x, pos.y)}
     className={`cursor-pointer`}
-    onClick={pos.modalTitle !== 'manByBar' ? () => openModal(pos) : null}
+    onClick={pos.modalTitle !== 'manByBar' ? () => {openModal(pos)} : null}
     onMouseEnter={pos.modalTitle !== 'manByBar' ? () => setHoveredIndex(index) : null}
     onMouseLeave={pos.modalTitle !== 'manByBar' ? () => setHoveredIndex(null) : null}
   >
     <Image
+      key={index}
       src={hoveredIndex === index ? pos.iconSrcActive : pos.iconSrc}
       alt={pos?.modalTitle}
       width={
@@ -190,6 +191,10 @@ function Festival() {
           </button>
         </div>
       </Modal>
+      <audio controls autoplay loop preload className='relative bottom-0 left-0 w-24'>
+  <source src="audio/shakeshake-song.mp4" type="audio/mp4" />
+  Your browser does not support the audio element.
+</audio>
     </div>
   );
 }

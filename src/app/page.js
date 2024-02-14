@@ -11,6 +11,7 @@ export default function Home() {
       <div className=" mt-24 mx-auto p-2 ">
         <Festival/>
         {/* <AchievementsSection /> */}
+        
       </div>
     </main>
   );

@@ -12,6 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html className='' lang="en">
       <body id='pixel_font' className={inter.className}>{children}</body>
+
     </html>
   )
 }
