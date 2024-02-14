@@ -6,7 +6,8 @@ import imageMapResize from './imageMapResizer';
 import Modal from 'react-modal';
 import Link from 'next/link';
 import neonColor from '../../styles/neon.module.css'
-import styles from "../../styles/speakerAnimation.module.css"
+import speakerAnimation from "../../styles/speakerAnimation.module.css"
+import iconsAnimation from "../../styles/iconsAnimation.module.css"
 
 
 function Festival() {
@@ -115,6 +116,9 @@ function Festival() {
     }
   };
 
+  const getRandomDelayFactor = () => Math.random();
+
+
   return (
     <div className='w-full h-full relative '>
       <div className='flex justify-center container'>
@@ -142,7 +146,9 @@ function Festival() {
       key={index}
       src={hoveredIndex === index ? pos.iconSrcActive : pos.iconSrc}
       alt={pos?.modalTitle}
-      className={`${ pos.modalTitle !== 'manByBar' && 'image'}`}
+      className={`${pos.modalTitle !== 'manByBar' ? iconsAnimation.jumpAnimation : ''}`}
+      style={{ '--delay-factor': getRandomDelayFactor() }}
+
       width={
         pos.modalTitle === 'manByBar' || pos.modalTitle === 'lapDance' ? (
           widowSize <= 480 ? 45 : 
@@ -212,7 +218,7 @@ function Festival() {
           src="/icons/shake-speaker.svg"
           alt="PNG Image"
           onClick={toggleMusic}
-          className={`${styles.pngImage} ${isMusicPlaying ? styles.jumpingMore : styles.jumpingLess}`}
+          className={`${speakerAnimation.pngImage} ${isMusicPlaying ? speakerAnimation.jumpingMore : speakerAnimation.jumpingLess}`}
           width={70}
           height={70}
         />
