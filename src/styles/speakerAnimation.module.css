@@ -1,0 +1,25 @@
+.pngImage {
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .jumpingLess {
+    animation: jump 0.5s ease infinite alternate;
+  }
+  
+  .jumpingMore {
+    animation: jump 0.3s ease infinite alternate;
+  }
+  
+  @keyframes jump {
+    0% {
+      transform: translateY(0) rotate(0);
+    }
+    50% {
+      transform: translateY(-5px) rotate(5deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0);
+    }
+  }
+  

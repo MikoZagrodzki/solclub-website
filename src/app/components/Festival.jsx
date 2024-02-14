@@ -1,11 +1,12 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import './Festival.module.css'; // Import a CSS file for styles
 import imageMapResize from './imageMapResizer';
 import Modal from 'react-modal';
 import Link from 'next/link';
 import neonColor from '../../styles/neon.module.css'
+import styles from "../../styles/speakerAnimation.module.css"
 
 
 function Festival() {
@@ -18,6 +19,17 @@ function Festival() {
   const [hoveredIndex, setHoveredIndex] = useState(null); // State to track currently hovered icon index
 
   const [widowSize, setWindowSize] = useState(null);
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const toggleMusic = () => {
+    setIsMusicPlaying(!isMusicPlaying);
+    if (!isMusicPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+    }
+  };
 
 
   //THIS CHANGES BACKGROUND TO DIFFERENT IMAGE ON SMALL SCREEN
@@ -193,10 +205,24 @@ function Festival() {
           </button>
         </div>
       </Modal>
-      <audio controls autoplay loop preload className='fixed bottom-0 left-0 w-32'>
-  <source src="audio/shakeshake-song.mp4" type="audio/mp4" />
-  Your browser does not support the audio element.
-</audio>
+
+      <div className='fixed bottom-0 left-0 w-32'>
+        {/* PNG Image */}
+        <img
+          src="/icons/shake-speaker.svg"
+          alt="PNG Image"
+          onClick={toggleMusic}
+          className={`${styles.pngImage} ${isMusicPlaying ? styles.jumpingMore : styles.jumpingLess}`}
+          width={70}
+          height={70}
+        />
+
+        {/* Audio Player */}
+        <audio ref={audioRef} loop preload>
+          <source src="audio/shakeshake-song.mp4" type="audio/mp4" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
     </div>
   );
 }

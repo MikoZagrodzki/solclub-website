@@ -19,3 +19,24 @@
 
   height: auto; /* Maintain aspect ratio */
 }
+
+.pngImage {
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.jumping {
+  animation: jump 0.5s ease infinite alternate;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-10px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
