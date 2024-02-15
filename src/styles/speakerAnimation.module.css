@@ -6,9 +6,17 @@
   .jumpingLess {
     animation: jump 0.5s ease infinite alternate;
   }
+
+  .jumpingLess:hover {
+    scale: 110%;
+  }
   
   .jumpingMore {
     animation: jump 0.3s ease infinite alternate;
+  }
+
+  .jumpingMore:hover {
+    scale: 110%;
   }
   
   @keyframes jump {

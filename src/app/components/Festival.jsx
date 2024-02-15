@@ -152,7 +152,7 @@ function Festival() {
   
   return (
     <div className='w-full h-full relative '>
-      <div className='flex justify-center container'>
+      <div className='flex justify-center container '>
         <img useMap='#image_map' src='/images/shake-bg-svg.svg' alt='Shake Background' width={1080} height={720} className='' />
         <map name='image_map'>
           {/* <area alt='bot' title='bot' href='bot' coords='380,415' shape='circle' />
@@ -179,7 +179,7 @@ function Festival() {
 
 
       alt={pos?.modalTitle}
-      className={`${pos.modalTitle !== 'manByBar' ? iconsAnimation.jumpAnimation : ''}`}
+      className={`${pos.modalTitle !== 'manByBar' ? iconsAnimation.jumpAnimation : ''} `}
       style={{ '--delay-factor': getRandomDelayFactor() }}
       width={
         pos.modalTitle === 'manByBar' || pos.modalTitle === 'lapDance' ? (
@@ -250,7 +250,7 @@ function Festival() {
           src="/icons/shake-speaker.svg"
           alt="PNG Image"
           onClick={toggleMusic}
-          className={`${speakerAnimation.pngImage} ${isMusicPlaying ? speakerAnimation.jumpingMore : speakerAnimation.jumpingLess}`}
+          className={`${speakerAnimation.pngImage} ${isMusicPlaying ? speakerAnimation.jumpingMore : speakerAnimation.jumpingLess}  `}
           width={70}
           height={70}
         />
