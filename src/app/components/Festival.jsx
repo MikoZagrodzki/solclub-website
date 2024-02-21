@@ -402,8 +402,10 @@ function Festival() {
         contentLabel='faq'
         className={`flex flex-col items-center w-screen min-h-screen ${gradientBg.gradientBackground}`}
       >
-        <div className='container py-28 flex flex-col items-center gap-2 relative w-screen h-screen max-h-screen overflow-auto z-10'>
-          <Image src={'/modalContent/shake-faq.svg'} alt={'faq'} width={600} height={300} className='' />
+        <div className='container  py-28 flex flex-col items-center gap-2 relative w-screen h-screen max-h-screen overflow-auto z-10'>
+          <div className=' w-11/12 flex flex-col items-center'>
+            <Image src={'/modalContent/shake-faq.svg'} alt={'faq'} width={600} height={300} className='' />
+          </div>
           <button
             className={`absolute top-32 ${isSmallScreen?'right-20':'right-44'} bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
             onClick={() => setIsFaqModalOpen(false)}
