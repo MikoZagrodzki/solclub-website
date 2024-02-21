@@ -393,7 +393,7 @@ function Festival() {
           src={isFaqHovered ? '/icons/shake-faq-active.svg' : '/icons/shake-faq.svg'}
           width={isSmallScreen ? 20 : 45}
           height={isSmallScreen ? 20 : 45}
-          className='w-32 hover:scale-105 cursor-pointer'
+          className={` hover:scale-105 cursor-pointer ${isSmallScreen? 'w-20': 'w-32'}`}
         />
       </button>
       <Modal
@@ -405,7 +405,7 @@ function Festival() {
         <div className='container py-28 flex flex-col items-center gap-2 relative w-screen h-screen max-h-screen overflow-auto z-10'>
           <Image src={'/modalContent/shake-faq.svg'} alt={'faq'} width={600} height={300} className='' />
           <button
-            className={`absolute top-32 ${isSmallScreen?'right-20':'right-52'} bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
+            className={`absolute top-32 ${isSmallScreen?'right-20':'right-44'} bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
             onClick={() => setIsFaqModalOpen(false)}
             title='Close popup'
           >
