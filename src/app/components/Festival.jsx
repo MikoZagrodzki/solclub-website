@@ -9,6 +9,9 @@ import neonColor from '../../styles/neon.module.css';
 import speakerAnimation from '../../styles/speakerAnimation.module.css';
 import iconsAnimation from '../../styles/iconsAnimation.module.css';
 import gradientBg from '../../styles/gradientBg.module.css';
+import calculateWidth from './calculateWidth';
+import CardPay from './CardPay';
+import hideScroll from '../../styles/hideScrollingBar.module.css'
 
 function Festival() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -23,6 +26,8 @@ function Festival() {
 
   const [isFaqModalOpen, setIsFaqModalOpen] = useState(false);
   const [isFaqHovered, setIsFaqHovered] = useState(false);
+
+  const [isCardModalOpen, setIsCardModalOpen] = useState(false);
 
   const audioRef = useRef(null);
 
@@ -150,6 +155,31 @@ function Festival() {
     setIsModalOpen(false);
   };
 
+  const openCardModal = () => {
+    setIsCardModalOpen(true);
+  };
+
+  const closeCardModal = () => {
+    setIsCardModalOpen(false);
+  };
+
+  //\\\\\\OPEN CARD MODAL ON /URL
+  useEffect(() => {
+    // Check if window is defined (to ensure it's running in the client-side context)
+    if (typeof window !== 'undefined' && window.location.hash === '#BOOTY-SHAKE-CARD') {
+      // Run this code once when the component mounts
+      openPopupOrModal();
+    }
+  }, []); // Empty dependency array ensures this effect runs only once
+
+  const openPopupOrModal = () => {
+    // Implement your logic to open the popup/modal here
+    // For example, set state to open the popup
+    setIsCardModalOpen(true);
+  };
+    //\\\\\\END OF OPEN CARD MODAL ON /URL
+
+
   //POPUP STYLES
   const modalWidth = isSmallScreen ? '300px' : '600px';
 
@@ -195,6 +225,7 @@ function Festival() {
     }
   };
 
+  //\\\\\\\\\\\\\LADIES RANDOM BLINK ANIMATION\\\\\\\\\\\\\
   const getRandomDelayFactor = () => Math.random();
 
   const [isSrcActive, setIsSrcActive] = useState({});
@@ -224,6 +255,8 @@ function Festival() {
       intervals.forEach((interval) => clearInterval(interval));
     };
   }, []); // Empty dependency array to run effect only once
+  //\\\\\\\\\\\\\END OF LADIES RANDOM BLINK ANIMATION\\\\\\\\\\\\\
+
 
   return (
     <div className='w-full h-full relative'>
@@ -243,13 +276,17 @@ function Festival() {
         <div
           key={index}
           style={iconStyle(pos.x, pos.y)}
-          className={`cursor-pointer`}
+          className={`${pos.modalTitle === 'manByBar'?'':'cursor-pointer'}`}
           onClick={
-            pos.modalTitle !== 'manByBar'
-              ? () => {
-                  openModal(pos);
-                }
-              : null
+            pos.modalTitle === 'manByBar'
+              ? null
+              : pos.modalTitle === 'cards'
+                ? () => {
+                    openCardModal();
+                  }
+                : () => {
+                    openModal(pos);
+                  }
           }
           onMouseEnter={pos.modalTitle !== 'manByBar' ? () => setHoveredIndex(index) : null}
           onMouseLeave={pos.modalTitle !== 'manByBar' ? () => setHoveredIndex(null) : null}
@@ -260,80 +297,8 @@ function Festival() {
             alt={pos?.modalTitle}
             className={`${pos.modalTitle !== 'manByBar' ? iconsAnimation.jumpAnimation : ''} `}
             style={{ '--delay-factor': getRandomDelayFactor() }}
-            width={
-              pos.modalTitle === 'manByBar' || pos.modalTitle === 'lapDance'
-                ? widowSize <= 480
-                  ? 45
-                  : widowSize <= 520
-                  ? 65
-                  : widowSize <= 560
-                  ? 70
-                  : widowSize <= 600
-                  ? 73
-                  : widowSize <= 640
-                  ? 80
-                  : widowSize <= 680
-                  ? 83
-                  : widowSize <= 720
-                  ? 84
-                  : widowSize <= 760
-                  ? 85
-                  : widowSize <= 768
-                  ? 90
-                  : widowSize <= 800
-                  ? 95
-                  : widowSize <= 840
-                  ? 95
-                  : widowSize <= 880
-                  ? 95
-                  : widowSize <= 920
-                  ? 100
-                  : widowSize <= 960
-                  ? 110
-                  : widowSize <= 1000
-                  ? 120
-                  : widowSize <= 1040
-                  ? 130
-                  : widowSize <= 1080
-                  ? 140
-                  : 150
-                : widowSize <= 480
-                ? 28
-                : widowSize <= 520
-                ? 32
-                : widowSize <= 560
-                ? 36
-                : widowSize <= 600
-                ? 40
-                : widowSize <= 640
-                ? 45
-                : widowSize <= 680
-                ? 50
-                : widowSize <= 720
-                ? 55
-                : widowSize <= 760
-                ? 60
-                : widowSize <= 768
-                ? 60
-                : widowSize <= 800
-                ? 65
-                : widowSize <= 840
-                ? 67
-                : widowSize <= 880
-                ? 70
-                : widowSize <= 920
-                ? 72
-                : widowSize <= 960
-                ? 80
-                : widowSize <= 1000
-                ? 90
-                : widowSize <= 1040
-                ? 92
-                : widowSize <= 1080
-                ? 94
-                : 95
-            }
-            height={90}
+            width={calculateWidth(pos.modalTitle, widowSize)}
+            height={calculateWidth(pos.modalTitle, widowSize)}
             // style={{ height: 'auto' }} // Example inline styles
           />
         </div>
@@ -347,13 +312,8 @@ function Festival() {
             <button
               onClick={() => openPdfInNewTab('/pdf/shake-paper-pdf.pdf')}
               className={`cursor-pointer flex flex-col items-center absolute ${isSmallScreen ? 'bottom-8' : 'bottom-20'} left-50 z-10`}
-              >
-              <Image
-                src={'/modalContent/shake-paper-pdf.svg'}
-                width={80}
-                height={80}
-                className={`  hover:scale-105 hover:brightness-125`}
-              />
+            >
+              <Image src={'/modalContent/shake-paper-pdf.svg'} width={80} height={80} className={`  hover:scale-105 hover:brightness-125`} />
             </button>
           )}
           <button
@@ -393,27 +353,46 @@ function Festival() {
           src={isFaqHovered ? '/icons/shake-faq-active.svg' : '/icons/shake-faq.svg'}
           width={isSmallScreen ? 20 : 45}
           height={isSmallScreen ? 20 : 45}
-          className={` hover:scale-105 cursor-pointer ${isSmallScreen? 'w-20': 'w-32'}`}
+          className={` hover:scale-105 cursor-pointer ${isSmallScreen ? 'w-20' : 'w-32'}`}
         />
       </button>
+      {/* FAQ MODAL */}
       <Modal
         isOpen={isFaqModalOpen}
         onRequestClose={() => setIsFaqModalOpen(false)}
         contentLabel='faq'
-        className={`flex flex-col items-center w-screen min-h-screen ${gradientBg.gradientBackground}`}
+        className={`flex flex-col items-center w-screen h-screen min-h-screen overflow-auto ${gradientBg.gradientBackground} ${hideScroll.hideScrollbar}`}
       >
-        <div className='container  py-28 flex flex-col items-center gap-2 relative w-screen h-screen max-h-screen overflow-auto z-10'>
-          <div className=' w-11/12 flex flex-col items-center'>
-            <Image src={'/modalContent/shake-faq.svg'} alt={'faq'} width={600} height={300} className='' />
+        <div className=' relative  mt-28 flex flex-col items-center gap-2 h-screen min-h-screen z-10'>
+          <div className={` w-11/12 flex flex-col items-center gap-10 pb-10`}>
+          <Image src={'/modalContent/shake-faq.svg'} alt={'faq'} width={600} height={300} className='' />
+          {/* <Link className='w-10/12' href={''} target='_blank' > 
+            <img src={'/modalContent/shake-kycCard-faq-lastBit.svg'} alt={'faq'}  className='w-full' />
+          </Link> */}
           </div>
           <button
-            className={`absolute top-32 ${isSmallScreen?'right-20':'right-44'} bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
+            className={`absolute top-0 right-4 bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
             onClick={() => setIsFaqModalOpen(false)}
             title='Close popup'
           >
             X
           </button>
         </div>
+      </Modal>
+
+      {/* Card Modal */}
+      <Modal
+        isOpen={isCardModalOpen}
+        onRequestClose={closeCardModal}
+        contentLabel='Card'
+        className={`flex flex-col items-center w-screen min-h-screen ${gradientBg.gradientBackground} `}
+      >
+        <div className=' pt-28 flex flex-col items-center relative w-screen h-screen min-h-screen overflow-auto z-10'>
+          <img src='/modalContent/shake-kycCard-header.svg' className='w-full max-w-2xl px-4'/>
+          <CardPay closeModal={closeCardModal} faqOnClick={()=>{closeCardModal(), setIsFaqModalOpen(true)}}/>
+          {/* <Faq /> */}
+        </div>
+
       </Modal>
     </div>
   );

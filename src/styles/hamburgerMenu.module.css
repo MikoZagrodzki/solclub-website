@@ -1,0 +1,16 @@
+@keyframes scaleAndRotate {
+    0% {
+      transform: scale(1) rotate(0deg);
+    }
+    100% {
+      transform: scale(1.05) rotate(5deg);
+    }
+  }
+  
+  .iconHoverEffect {
+    transition: transform 0.3s ease;
+  }
+  
+  .iconHoverEffect:hover {
+    animation: scaleAndRotate 0.3s forwards;
+  }
