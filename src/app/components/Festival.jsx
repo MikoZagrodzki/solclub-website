@@ -369,6 +369,7 @@ function Festival() {
           {/* <Link className='w-10/12' href={''} target='_blank' > 
             <img src={'/modalContent/shake-kycCard-faq-lastBit.svg'} alt={'faq'}  className='w-full' />
           </Link> */}
+          <Image src={'/modalContent/shake-faq-chart.svg'} alt={'faq'} width={600} height={300} className='py-10' />
           </div>
           <button
             className={`absolute top-0 right-4 bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
