@@ -78,6 +78,7 @@ function Festival() {
       iconSrcActive: '/pinIcons/shake-bot-active.svg',
       iconSrc: '/pinIcons/shake-bot.svg',
       class: '',
+      modalHref: 'https://t.me/shakeclub_bot',
     },
     {
       x: 630,
@@ -307,7 +308,7 @@ function Festival() {
       {/* Modal */}
       <Modal isOpen={isModalOpen} onRequestClose={closeModal} style={modalStyles} contentLabel='Pin Modal' className=''>
         <div className='container flex flex-col items-center gap-2 relative'>
-          <Image src={selectedPin?.modalSvgSrc} alt={selectedPin?.modalTitle} width={600} height={300} title={selectedPin?.modalTitle} className='' />
+          {selectedPin?.modalHref?(<Link className='hover:brightness-125' href={selectedPin.modalHref}><Image src={selectedPin?.modalSvgSrc} alt={selectedPin?.modalTitle} width={600} height={300} title={selectedPin?.modalTitle} className='' /></Link>):(<Image src={selectedPin?.modalSvgSrc} alt={selectedPin?.modalTitle} width={600} height={300} title={selectedPin?.modalTitle} className='' />)}
           {selectedPin?.modalTitle === 'paper' && (
             <button
               onClick={() => openPdfInNewTab('/pdf/shake-paper-pdf.pdf')}
@@ -369,7 +370,7 @@ function Festival() {
           {/* <Link className='w-10/12' href={''} target='_blank' > 
             <img src={'/modalContent/shake-kycCard-faq-lastBit.svg'} alt={'faq'}  className='w-full' />
           </Link> */}
-          <Image src={'/modalContent/shake-faq-chart.svg'} alt={'faq'} width={600} height={300} className='py-10' />
+          {/* <Image src={'/modalContent/shake-faq-chart.svg'} alt={'faq'} width={600} height={300} className='py-10' /> */}
           </div>
           <button
             className={`absolute top-0 right-4 bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
