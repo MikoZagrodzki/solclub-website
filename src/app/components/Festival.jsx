@@ -366,7 +366,7 @@ function Festival() {
       >
         <div className=' relative  mt-28 flex flex-col items-center gap-2 h-screen min-h-screen z-10'>
           <div className={` w-11/12 flex flex-col items-center gap-10 pb-10`}>
-          <Image src={isSmallScreen?'/modalContent/shake-faq-small.svg':'/modalContent/shake-faq.svg'} alt={'faq'} width={600} height={300} className='' />
+          <Image src={isSmallScreen?'/modalContent/shake-faq-small.svg':'/modalContent/shake-faq.svg'} alt={'faq'} width={600} height={300} className='py-10' />
           {/* <Link className='w-10/12' href={''} target='_blank' > 
             <img src={'/modalContent/shake-kycCard-faq-lastBit.svg'} alt={'faq'}  className='w-full' />
           </Link> */}
