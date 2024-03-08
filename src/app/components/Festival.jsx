@@ -315,7 +315,7 @@ function Festival() {
               onClick={() => openPdfInNewTab('/pdf/shake-paper-pdf.pdf')}
               className={`cursor-pointer flex flex-col items-center absolute ${isSmallScreen ? 'bottom-8' : 'bottom-20'} left-50 z-10`}
             >
-              <Image src={'/modalContent/shake-paper-pdf.svg'} width={80} height={80} className={`  hover:scale-105 hover:brightness-125`} />
+              <Image src={'/modalContent/shake-paper-pdf.svg'} alt={selectedPin?.modalTitle} width={80} height={80} className={`  hover:scale-105 hover:brightness-125`} />
             </button>
           )}
           {selectedPin?.modalTitle === 'bot' && (
@@ -324,7 +324,7 @@ function Festival() {
             target='_blank'
             className={`cursor-pointer flex flex-col items-center absolute ${isSmallScreen ? 'bottom-6' : 'bottom-12'} left-50 z-10`}
           >
-            <Image src={'/icons/shake-open-bot-icon.svg'} width={isSmallScreen?40:80} height={isSmallScreen?40:80} className={`hover:scale-105 hover:brightness-125`} />
+            <Image src={'/icons/shake-open-bot-Icon.svg'} alt={selectedPin?.modalTitle} width={isSmallScreen?40:80} height={isSmallScreen?40:80} className={`hover:scale-105 hover:brightness-125`} />
           </Link>
           )}
           <button
