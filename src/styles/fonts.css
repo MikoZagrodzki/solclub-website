@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Oliver';
+    src: url('/fonts/Oliver-Regular.ttf') format('truetype');
+  }
+  
+  .oliverFont {
+    font-family: 'Oliver', sans-serif;
+  }

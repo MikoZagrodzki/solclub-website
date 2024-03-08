@@ -12,6 +12,7 @@ import gradientBg from '../../styles/gradientBg.module.css';
 import calculateWidth from './calculateWidth';
 import CardPay from './CardPay';
 import hideScroll from '../../styles/hideScrollingBar.module.css'
+import fontStyles from '../../styles/fonts.css'
 
 function Festival() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -308,7 +309,7 @@ function Festival() {
       {/* Modal */}
       <Modal isOpen={isModalOpen} onRequestClose={closeModal} style={modalStyles} contentLabel='Pin Modal' className=''>
         <div className='container flex flex-col items-center gap-2 relative'>
-          {selectedPin?.modalHref?(<Link className='hover:brightness-125' href={selectedPin.modalHref}><Image src={selectedPin?.modalSvgSrc} alt={selectedPin?.modalTitle} width={600} height={300} title={selectedPin?.modalTitle} className='' /></Link>):(<Image src={selectedPin?.modalSvgSrc} alt={selectedPin?.modalTitle} width={600} height={300} title={selectedPin?.modalTitle} className='' />)}
+          <Image src={selectedPin?.modalSvgSrc} alt={selectedPin?.modalTitle} width={600} height={300} title={selectedPin?.modalTitle} className='' />
           {selectedPin?.modalTitle === 'paper' && (
             <button
               onClick={() => openPdfInNewTab('/pdf/shake-paper-pdf.pdf')}
@@ -316,6 +317,15 @@ function Festival() {
             >
               <Image src={'/modalContent/shake-paper-pdf.svg'} width={80} height={80} className={`  hover:scale-105 hover:brightness-125`} />
             </button>
+          )}
+          {selectedPin?.modalTitle === 'bot' && (
+            <Link
+            href={selectedPin?.modalHref} 
+            target='_blank'
+            className={`cursor-pointer flex flex-col items-center absolute ${isSmallScreen ? 'bottom-6' : 'bottom-12'} left-50 z-10`}
+          >
+            <Image src={'/icons/shake-open-bot-icon.svg'} width={isSmallScreen?40:80} height={isSmallScreen?40:80} className={`hover:scale-105 hover:brightness-125`} />
+          </Link>
           )}
           <button
             className='absolute top-0 right-0 bg-gradient-radial   from-[#E664BE]  to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125'
