@@ -15,7 +15,7 @@ import animation from '../../styles/hamburgerMenu.module.css'
 
 const navLinks = [
   {
-    path: 'https://dexscreener.com/',
+    path: 'https://dexscreener.com/solana/cht7k3d6hrrfygwxhcseoxz389jdvhpnsty2cy87errl',
     img: DexIcon,
     alt: 'Dex Screener',
     comp: '/icons/dex-icon.svg',
