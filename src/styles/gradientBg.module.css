@@ -1,24 +1,24 @@
 /* styles.module.css */
 
 .gradientBackground {
-    background: linear-gradient(to right, #FF0086, #FFFFFF 20%, #FFFFFF 80%, #FF0086);
+    background: linear-gradient(to right, #194DF5, #FFFFFF 20%, #FFFFFF 80%, #194DF5);
   }
   
   @media (max-width: 640px) {
     .gradientBackground {
-      background: linear-gradient(to right, #FF0086, #FFFFFF 5%, #FFFFFF 95%, #FF0086);
+      background: linear-gradient(to right, #194DF5, #FFFFFF 5%, #FFFFFF 95%, #194DF5);
     }
   }
   
   @media (min-width: 641px) and (max-width: 1024px) {
     .gradientBackground {
-      background: linear-gradient(to right, #FF0086, #FFFFFF 10%, #FFFFFF 90%, #FF0086);
+      background: linear-gradient(to right, #194DF5, #FFFFFF 10%, #FFFFFF 90%, #194DF5);
     }
   }
   
   @media (min-width: 1025px) {
     .gradientBackground {
-      background: linear-gradient(to right, #FF0086, #FFFFFF 15%, #FFFFFF 85%, #FF0086);
+      background: linear-gradient(to right, #194DF5, #FFFFFF 15%, #FFFFFF 85%, #194DF5);
     }
   }
   

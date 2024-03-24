@@ -25,7 +25,7 @@ export default function CardPay(props) {
             isSmallScreen ? 'top-[92px]' : 'top-[92px]'
           } left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${isSmallScreen ? 'w-10/12' : 'w-10/12'} bg-white`}
         >
-          <img src={'/icons/shake-icon.svg'} alt='Shake logo' className={` ${isSmallScreen ? 'h-[74px]' : 'h-[72px]'} `} onLoad={handleImageLoad} />
+          <img src={'/icons/base-icon.svg'} alt='BASE $CLUB logo' className={` ${isSmallScreen ? 'h-[74px]' : 'h-[72px]'} `} onLoad={handleImageLoad} />
         </div>
         {isImageLoaded && ( // Render iframe only if image is loaded
           <iframe
@@ -36,13 +36,13 @@ export default function CardPay(props) {
           />
         )}
         <div className='max-w-2xl'>
-          <img src='/modalContent/shake-kycCard-faq.svg' className='w-full  h-auto px-4' />
+          <img src='/modalContent/base-kycCard-faq.svg' className='w-full  h-auto px-4' />
           <button className='max-w-2xl px-4 py-10 h-auto'  onClick={props.faqOnClick}>
-            <img src={'/modalContent/shake-kycCard-faq-lastBit.svg'} alt={'faq'} className='w-full' />
+            <img src={'/modalContent/base-kycCard-faq-lastBit.svg'} alt={'faq'} className='w-full' />
           </button>
         </div>
         <button
-          className={`absolute top-4 right-4 bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-50`}
+          className={`absolute top-4 right-4 bg-gradient-radial bg-[#379FFF] px-2 rounded-full cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-50`}
           onClick={props.closeModal}
           title='Close popup'
         >

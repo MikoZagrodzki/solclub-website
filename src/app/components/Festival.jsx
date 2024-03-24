@@ -75,9 +75,9 @@ function Festival() {
       x: 380,
       y: 415,
       modalTitle: 'bot',
-      modalSvgSrc: '/modalContent/shake-bot.svg',
-      iconSrcActive: '/pinIcons/shake-bot-active.svg',
-      iconSrc: '/pinIcons/shake-bot.svg',
+      modalSvgSrc: '/modalContent/base-bot.svg',
+      iconSrcActive: '/pinIcons/base-bot-active.svg',
+      iconSrc: '/pinIcons/base-bot.svg',
       class: '',
       modalHref: 'https://t.me/shakeclub_bot',
     },
@@ -85,54 +85,54 @@ function Festival() {
       x: 630,
       y: 325,
       modalTitle: 'cards',
-      modalSvgSrc: '/modalContent/shake-cards.svg',
-      iconSrcActive: '/pinIcons/shake-cards-active.svg',
-      iconSrc: '/pinIcons/shake-cards.svg',
+      modalSvgSrc: '/modalContent/base-cards.svg',
+      iconSrcActive: '/pinIcons/base-cards-active.svg',
+      iconSrc: '/pinIcons/base-cards.svg',
       class: '',
     },
     {
       x: 260,
       y: 400,
       modalTitle: 'lottery',
-      modalSvgSrc: '/modalContent/shake-lottery.svg',
-      iconSrcActive: '/pinIcons/shake-lottery-active.svg',
-      iconSrc: '/pinIcons/shake-lottery.svg',
+      modalSvgSrc: '/modalContent/base-lottery.svg',
+      iconSrcActive: '/pinIcons/base-lottery-active.svg',
+      iconSrc: '/pinIcons/base-lottery.svg',
       class: '',
     },
     {
       x: 501,
       y: 385,
       modalTitle: 'nft',
-      modalSvgSrc: '/modalContent/shake-nft.svg',
-      iconSrcActive: '/pinIcons/shake-nft-active.svg',
-      iconSrc: '/pinIcons/shake-nft.svg',
+      modalSvgSrc: '/modalContent/base-nft.svg',
+      iconSrcActive: '/pinIcons/base-nft-active.svg',
+      iconSrc: '/pinIcons/base-nft.svg',
       class: 'z-0',
     },
     {
       x: 500,
       y: 600,
       modalTitle: 'buy',
-      modalSvgSrc: '/modalContent/shake-buy.svg',
-      iconSrcActive: '/pinIcons/shake-buy-active.svg',
-      iconSrc: '/pinIcons/shake-buy.svg',
+      modalSvgSrc: '/modalContent/base-buy.svg',
+      iconSrcActive: '/pinIcons/base-buy-active.svg',
+      iconSrc: '/pinIcons/base-buy.svg',
       class: 'z-40',
     },
     {
       x: 950,
       y: 350,
       modalTitle: 'paper',
-      modalSvgSrc: '/modalContent/shake-paper.svg',
-      iconSrcActive: '/pinIcons/shake-paper-active.svg',
-      iconSrc: '/pinIcons/shake-paper.svg',
+      modalSvgSrc: '/modalContent/base-paper.svg',
+      iconSrcActive: '/pinIcons/base-paper-active.svg',
+      iconSrc: '/pinIcons/base-paper.svg',
       class: '',
     },
     {
       x: 1000,
       y: 500,
       modalTitle: 'lapDance',
-      modalSvgSrc: '/modalContent/shake-lapDance.svg',
-      iconSrcActive: '/pinIcons/shake-dance-active.png',
-      iconSrc: '/pinIcons/shake-dance.png',
+      modalSvgSrc: '/modalContent/base-lapDance.svg',
+      iconSrcActive: '/pinIcons/base-dance-active.svg',
+      iconSrc: '/pinIcons/base-dance.svg',
       class: '',
     },
     {
@@ -140,8 +140,8 @@ function Festival() {
       y: 605,
       modalTitle: 'manByBar',
       modalSvgSrc: '',
-      iconSrcActive: '/pinIcons/shake-manByBar.svg',
-      iconSrc: '/pinIcons/shake-manByBar.svg',
+      iconSrcActive: '/pinIcons/base-manByBar.svg',
+      iconSrc: '/pinIcons/base-manByBar.svg',
       class: '',
     },
   ];
@@ -168,7 +168,7 @@ function Festival() {
   //\\\\\\OPEN CARD MODAL ON /URL
   useEffect(() => {
     // Check if window is defined (to ensure it's running in the client-side context)
-    if (typeof window !== 'undefined' && window.location.hash === '#BOOTY-SHAKE-CARD') {
+    if (typeof window !== 'undefined' && window.location.hash === '#BASECLUB-CARD') {
       // Run this code once when the component mounts
       openPopupOrModal();
     }
@@ -263,7 +263,7 @@ function Festival() {
   return (
     <div className='w-full h-full relative'>
       <div className='flex justify-center container '>
-        <img useMap='#image_map' src='/images/shake-bg-svg.svg' alt='Shake Background' width={1080} height={720} className='' />
+        <img useMap='#image_map' src='/images/base-bg-svg.svg' alt='base Background' width={1080} height={720} className='' />
         <map name='image_map'>
           {/* <area alt='bot' title='bot' href='bot' coords='380,415' shape='circle' />
           <area alt='buy' title='buy' href='buy' coords='500,600' shape='circle' />
@@ -312,10 +312,10 @@ function Festival() {
           <Image src={selectedPin?.modalSvgSrc} alt={selectedPin?.modalTitle} width={600} height={300} title={selectedPin?.modalTitle} className='' />
           {selectedPin?.modalTitle === 'paper' && (
             <button
-              onClick={() => openPdfInNewTab('/pdf/shake-paper-pdf.pdf')}
+              onClick={() => openPdfInNewTab('/pdf/base-paper-pdf.pdf')}
               className={`cursor-pointer flex flex-col items-center absolute ${isSmallScreen ? 'bottom-8' : 'bottom-20'} left-50 z-10`}
             >
-              <Image src={'/modalContent/shake-paper-pdf.svg'} alt={selectedPin?.modalTitle} width={80} height={80} className={`  hover:scale-105 hover:brightness-125`} />
+              <Image src={'/modalContent/base-paper-pdf.svg'} alt={selectedPin?.modalTitle} width={80} height={80} className={`  hover:scale-105 hover:brightness-125`} />
             </button>
           )}
           {selectedPin?.modalTitle === 'bot' && (
@@ -324,11 +324,11 @@ function Festival() {
             target='_blank'
             className={`cursor-pointer flex flex-col items-center absolute ${isSmallScreen ? 'bottom-6' : 'bottom-12'} left-50 z-10`}
           >
-            <Image src={'/icons/shake-open-bot-Icon.svg'} alt={selectedPin?.modalTitle} width={isSmallScreen?40:80} height={isSmallScreen?40:80} className={`hover:scale-105 hover:brightness-125`} />
+            <Image src={'/icons/base-open-bot-Icon.svg'} alt={selectedPin?.modalTitle} width={isSmallScreen?40:80} height={isSmallScreen?40:80} className={`hover:scale-105 hover:brightness-125`} />
           </Link>
           )}
           <button
-            className='absolute top-0 right-0 bg-gradient-radial   from-[#E664BE]  to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125'
+            className='absolute top-0 right-0 bg-[#379FFF] px-2 rounded-full cursor-pointer text-white shadow-xl hover:filter hover:brightness-125'
             onClick={closeModal}
             title='Close popup'
           >
@@ -340,7 +340,7 @@ function Festival() {
       <div className='fixed bottom-0 left-0 w-32'>
         {/* PNG Image */}
         <img
-          src='/icons/shake-speaker.svg'
+          src='/icons/base-speaker.svg'
           alt='PNG Image'
           onClick={toggleMusic}
           className={`${speakerAnimation.pngImage} ${isMusicPlaying ? speakerAnimation.jumpingMore : speakerAnimation.jumpingLess}  `}
@@ -361,7 +361,7 @@ function Festival() {
         className='fixed bottom-2 right-2'
       >
         <Image
-          src={isFaqHovered ? '/icons/shake-faq-active.svg' : '/icons/shake-faq.svg'}
+          src={isFaqHovered ? '/icons/base-faq-active.svg' : '/icons/base-faq.svg'}
           width={isSmallScreen ? 20 : 45}
           height={isSmallScreen ? 20 : 45}
           className={` hover:scale-105 cursor-pointer ${isSmallScreen ? 'w-20' : 'w-32'}`}
@@ -376,14 +376,14 @@ function Festival() {
       >
         <div className=' relative  mt-28 flex flex-col items-center gap-2 h-screen min-h-screen z-10'>
           <div className={` w-11/12 flex flex-col items-center gap-10 pb-10`}>
-          <Image src={isSmallScreen?'/modalContent/shake-faq-small.svg':'/modalContent/shake-faq.svg'} alt={'faq'} width={600} height={300} className='py-10' />
+          <Image src={isSmallScreen?'/modalContent/base-faq-small.svg':'/modalContent/base-faq.svg'} alt={'faq'} width={600} height={300} className='py-10' />
           {/* <Link className='w-10/12' href={''} target='_blank' > 
             <img src={'/modalContent/shake-kycCard-faq-lastBit.svg'} alt={'faq'}  className='w-full' />
           </Link> */}
           {/* <Image src={'/modalContent/shake-faq-chart.svg'} alt={'faq'} width={600} height={300} className='py-10' /> */}
           </div>
           <button
-            className={`absolute top-0 right-4 bg-gradient-radial from-[#E664BE] to-[#E66484] px-2 rounded-md cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
+            className={`absolute top-0 right-4 bg-[#379FFF] px-2 rounded-full cursor-pointer text-white shadow-xl hover:filter hover:brightness-125 z-40`}
             onClick={() => setIsFaqModalOpen(false)}
             title='Close popup'
           >
@@ -400,7 +400,7 @@ function Festival() {
         className={`flex flex-col items-center w-screen min-h-screen ${gradientBg.gradientBackground} `}
       >
         <div className=' pt-28 flex flex-col items-center relative w-screen h-screen min-h-screen overflow-auto z-10'>
-          <img src='/modalContent/shake-kycCard-header.svg' className='w-full max-w-2xl px-4'/>
+          <img src='/modalContent/base-kycCard-header.svg' className='w-full max-w-2xl px-4'/>
           <CardPay closeModal={closeCardModal} faqOnClick={()=>{closeCardModal(), setIsFaqModalOpen(true)}}/>
           {/* <Faq /> */}
         </div>

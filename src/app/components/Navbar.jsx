@@ -8,7 +8,6 @@ import './navbar.css';
 import DexIcon from '../../../public/dexscreener-icon.png';
 import TelegramIcon from '../../../public/telegram-icon.png';
 import XIcon from '../../../public/x-icon.png';
-import connectWallet from '../../../public//images/connectwallet-logo.png';
 import animation from '../../styles/hamburgerMenu.module.css'
 
 
@@ -47,7 +46,7 @@ const Navbar = () => {
       <div className=' flex flex-row-reverse container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2'>
         <div className='w-1/3 flex justify-end'>
         <Link href={'https://t.me/shakeclub_bot'} className='w-1/3 text-2xl md:text-5xl text-white font-semibold flex items-center justify-center gap-1 hover:scale-105'>
-          <Image src='/icons/shake-icon.svg' alt='hero image' width={80} height={80} className='' />
+          <Image src='/icons/base-icon.svg' alt='hero image' width={80} height={80} className='' />
         </Link>
         </div>
         <div className='w-1/3 mobile-menu block md:hidden'>
@@ -56,14 +55,14 @@ const Navbar = () => {
               onClick={() => setNavbarOpen(true)}
               className='flex items-center '
             >
-              <img src='/icons/shake-hamburgerMenu-icon.svg' className={`h-12 w-12 ${animation.iconHoverEffect}`} />
+              <img src='/icons/base-hamburgerMenu-icon.svg' className={`h-12 w-12 ${animation.iconHoverEffect}`} />
             </button>
           ) : (
             <button
               onClick={() => setNavbarOpen(false)}
               className=' flex items-center '
             >
-              <img src='/icons/shake-hamburgerMenu-icon.svg' className={`h-12 w-12 ${animation.iconHoverEffect}`} />
+              <img src='/icons/base-hamburgerMenu-icon.svg' className={`h-12 w-12 ${animation.iconHoverEffect}`} />
             </button>
           )}
         </div>
