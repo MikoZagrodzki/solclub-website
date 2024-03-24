@@ -45,7 +45,7 @@ const Navbar = () => {
     <nav className={`fixed mx-auto top-0 left-0 right-0  z-20 ${navbarOpen && ' border-b-2 bg-black bg-opacity-30'}`}>
       <div className=' flex flex-row-reverse container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2'>
         <div className='w-1/3 flex justify-end'>
-        <Link href={'https://t.me/shakeclub_bot'} className='w-1/3 text-2xl md:text-5xl text-white font-semibold flex items-center justify-center gap-1 hover:scale-105'>
+        <Link href={'https://t.me/baseclubio_bot'} className='w-1/3 text-2xl md:text-5xl text-white font-semibold flex items-center justify-center gap-1 hover:scale-105'>
           <Image src='/icons/base-icon.svg' alt='hero image' width={80} height={80} className='' />
         </Link>
         </div>

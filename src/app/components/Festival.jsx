@@ -79,7 +79,7 @@ function Festival() {
       iconSrcActive: '/pinIcons/base-bot-active.svg',
       iconSrc: '/pinIcons/base-bot.svg',
       class: '',
-      modalHref: 'https://t.me/shakeclub_bot',
+      modalHref: 'https://t.me/baseclubio_bot',
     },
     {
       x: 630,
