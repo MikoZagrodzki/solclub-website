@@ -21,14 +21,14 @@ const navLinks = [
     compActive: '/icons/dex-active-icon.svg',
   },
   {
-    path: 'https://t.me/shakeclubvip',
+    path: 'https://t.me/baseclubio',
     img: TelegramIcon,
     alt: 'Telegram',
     comp: '/icons/telegram-icon.svg',
     compActive: '/icons/telegram-active-icon.svg',
   },
   {
-    path: 'https://twitter.com/shakeclubvip',
+    path: 'https://twitter.com/baseclubio',
     img: XIcon,
     alt: 'twitter',
     comp: '/icons/x-icon.svg',
