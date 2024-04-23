@@ -13,6 +13,7 @@ import calculateWidth from './calculateWidth';
 import CardPay from './CardPay';
 import hideScroll from '../../styles/hideScrollingBar.module.css'
 import fontStyles from '../../styles/fonts.css'
+import { BOT_LINK } from '@/links';
 
 function Festival() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -79,7 +80,7 @@ function Festival() {
       iconSrcActive: '/pinIcons/base-bot-active.svg',
       iconSrc: '/pinIcons/base-bot.svg',
       class: '',
-      modalHref: 'https://t.me/baseclubio_bot',
+      modalHref: BOT_LINK,
     },
     {
       x: 630,
