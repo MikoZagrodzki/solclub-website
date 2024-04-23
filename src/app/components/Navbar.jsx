@@ -9,7 +9,7 @@ import DexIcon from '../../../public/dexscreener-icon.png';
 import TelegramIcon from '../../../public/telegram-icon.png';
 import XIcon from '../../../public/x-icon.png';
 import animation from '../../styles/hamburgerMenu.module.css'
-import { BOT_LINK, DEX_LINK, TG_LINK } from '@/links';
+import { BOT_LINK, DEX_LINK, TG_LINK, X_LINK } from '@/links';
 
 
 
@@ -29,7 +29,7 @@ const navLinks = [
     compActive: '/icons/telegram-active-icon.svg',
   },
   {
-    path: ,
+    path: X_LINK,
     img: XIcon,
     alt: 'twitter',
     comp: '/icons/x-icon.svg',
