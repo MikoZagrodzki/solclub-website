@@ -313,7 +313,7 @@ function Festival() {
           <Image src={selectedPin?.modalSvgSrc} alt={selectedPin?.modalTitle} width={600} height={300} title={selectedPin?.modalTitle} className='' />
           {selectedPin?.modalTitle === 'paper' && (
             <button
-              onClick={() => openPdfInNewTab('/pdf/base-paper-pdf.pdf')}
+              onClick={() => openPdfInNewTab('/pdf/club_shadypaper.pdf')}
               className={`cursor-pointer flex flex-col items-center absolute ${isSmallScreen ? 'bottom-8' : 'bottom-20'} left-50 z-10`}
             >
               <Image src={'/modalContent/base-paper-pdf.svg'} alt={selectedPin?.modalTitle} width={80} height={80} className={`  hover:scale-105 hover:brightness-125`} />
